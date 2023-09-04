@@ -5,11 +5,11 @@
   export let data: PageData;
 </script>
 
-<div class="container">
-  <h1 class="text-2xl mb-4">Projects</h1>
-  {#each data.posts as { slug, title }}
-    <div class="row-auto mb-4">
-      <ProjectCard {slug} {title} />
+<h1 class="text-2xl mb-4">Projects</h1>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+  {#each data.posts as { slug, title, imagePath }}
+    <div class="mb-4">
+      <ProjectCard {slug} {title} {imagePath} />
     </div>
   {/each}
 </div>

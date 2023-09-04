@@ -1,12 +1,12 @@
 <script lang="ts">
-  import logo from "$lib/images/svelte-welcome.webp";
+  export let imagePath: string;
   export let slug: string;
   export let title: string;
 </script>
 
 <div class="bg-white shadow-md rounded-lg p-6">
   <div class="flex justify-center">
-    <img src={logo} alt="welcome" class="w-32 h-32 rounded-full" />
+    <img src={`/images/${imagePath}`} alt="welcome" class="w-32 h-32 rounded" />
   </div>
   <div class="mt-4">
     <h2 class="text-xl font-semibold">{title}</h2>
