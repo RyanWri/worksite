@@ -1,7 +1,5 @@
 <script>
   import { page } from "$app/stores";
-  import logo from "$lib/images/brand_logo.svg";
-  import github from "$lib/images/github.svg";
 </script>
 
 <header>
@@ -11,7 +9,11 @@
         <div class="flex items-center">
           <div class="flex lg:flex-1">
             <a href="/" class="-m-1.5 p-1.5">
-              <img class="h-8 w-auto" src={logo} alt="The Wright Way" />
+              <img
+                class="h-8 w-auto"
+                src={"/images/brand_logo.svg"}
+                alt="The Wright Way"
+              />
             </a>
           </div>
           <div class="hidden md:block">
@@ -45,7 +47,7 @@
             <div class="flex-shrink-0">
               <!-- Your logo or brand -->
               <a href="https://github.com/RyanWri">
-                <img class="h-8 w-8" src={github} alt="Github" />
+                <img class="h-8 w-8" src={"/images/github.svg"} alt="Github" />
               </a>
             </div>
             <!-- Other elements like search, user profile, etc. -->
