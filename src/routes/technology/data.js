@@ -23,4 +23,16 @@ export const skills_by_category = [
     ],
     type_icon: "devicon",
   },
+  {
+    category: "infrastructure",
+    technologies: [
+      "linux",
+      "docker-wordmark",
+      "argocd-wordmark",
+      "git-wordmark",
+      "gitlab-wordmark",
+      "terraform-wordmark",
+    ],
+    type_icon: "devicon",
+  },
 ];

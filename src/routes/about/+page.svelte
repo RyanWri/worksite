@@ -51,29 +51,3 @@
     </p>
   </div>
 </div>
-
-<style>
-  .animated-text {
-    animation: fadeIn 1s ease-in-out;
-  }
-
-  .animated-paragraph {
-    animation: fadeIn 3s ease-in-out;
-    animation-fill-mode: forwards;
-  }
-
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .animated-text.animate {
-    animation: fadeIn 1s ease-in-out;
-  }
-</style>

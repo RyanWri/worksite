@@ -1,29 +1,18 @@
-<script>
-  import Counter from "./Counter.svelte";
-</script>
-
 <svelte:head>
   <title>Home</title>
   <meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<section>
-  <h1>
-    <span class="welcome">
-      <picture>
-        <source srcset={"/images/svelte-welcome.webp"} type="image/webp" />
-        <img src={"/images/svelte-welcome.png"} alt="Welcome" />
-      </picture>
-    </span>
-
-    to your new<br />SvelteKit app
-  </h1>
-
-  <h2 class="bg-blue-700">
-    try editing <strong>src/routes/+page.svelte</strong>
-  </h2>
-
-  <Counter />
+<section
+  class="w-full aspect-w-1 aspect-h-1 bg-cover bg-center"
+  style="background-image: url('/images/welcome-bg-comp.jpg')"
+>
+  <h1 class="text-2xl font-bold capitalize">Welcome to my website</h1>
+  <p class="pt-6 text-xl mb-2 animated-text">
+    I am here to assist you with the navigation
+  </p>
+  <a href="/about" class="text-blue-500 mb-2 animated-paragraph">About</a>
+  <a href="/projects" class="text-blue-500 mb-2 animated-paragraph">Projects</a>
 </section>
 
 <style>
@@ -32,26 +21,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex: 0.6;
-  }
-
-  h1 {
-    width: 100%;
-  }
-
-  .welcome {
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding: 0 0 calc(100% * 495 / 2048) 0;
-  }
-
-  .welcome img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    display: block;
+    flex: 0.9;
   }
 </style>
