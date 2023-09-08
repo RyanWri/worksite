@@ -18,6 +18,7 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    min-width: 75vh;
   }
 
   main {
@@ -26,7 +27,6 @@
     flex-direction: column;
     padding: 1rem;
     width: 100%;
-    max-width: 75rem;
     margin: 0 auto;
     box-sizing: border-box;
   }
