@@ -1,10 +1,16 @@
 <!--   This header is mobile compatible -->
 <script lang="ts">
+  import { afterNavigate } from "$app/navigation";
+
   let showMenu: boolean = false;
 
   function toggleNavbar() {
     showMenu = !showMenu;
   }
+
+  afterNavigate(() => {
+    showMenu = false;
+  });
 </script>
 
 <div>
