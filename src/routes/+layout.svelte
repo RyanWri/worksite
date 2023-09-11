@@ -3,16 +3,15 @@
   import Footer from "./Footer.svelte";
   import "./styles.css";
   import "../app.css";
-  import Header2 from "./Header2.svelte";
 </script>
 
 <header>
-  <Header2 />
+  <Header />
 </header>
 <main class="h-screen w-screen">
   <slot />
 </main>
 
-<footer class="bg-gray-100 mt-1">
+<footer class="mt-1 border-2 shadow-md">
   <Footer />
 </footer>
