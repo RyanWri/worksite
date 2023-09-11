@@ -20,7 +20,7 @@
 <h1 class="text-3xl font-bold">
   <span class:animate class="animated-text"> About </span>
 </h1>
-<div class="grid grid-cols-2 gap-4">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
   <div>
     <div class="col-auto">
       <img src="/images/me.webp" alt="Ryan Wright" class="w-32 h-32 rounded" />
