@@ -1,13 +1,9 @@
-const tailwindcss = require("tailwindcss");
-const autoprefixer = require("autoprefixer");
+// postcss.config.cjs
 
-const config = {
-  plugins: [
-    //Some plugins, like tailwindcss/nesting, need to run before Tailwind,
-    tailwindcss(),
-    //But others, like autoprefixer, need to run after,
-    autoprefixer,
-  ],
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+    // Other plugins if any...
+  },
 };
-
-module.exports = config;
