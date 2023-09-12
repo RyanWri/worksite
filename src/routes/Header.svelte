@@ -1,9 +1,16 @@
 <!--   This header is mobile compatible -->
 <script lang="ts">
   import { afterNavigate } from "$app/navigation";
+  import Icon from "@iconify/svelte";
 
   let showMenu: boolean = false;
+  // Add this to a component or layout file
+  let isDarkMode: boolean = false;
 
+  function toggleDarkMode() {
+    isDarkMode = !isDarkMode;
+    document.documentElement.classList.toggle("dark", isDarkMode);
+  }
   function toggleNavbar() {
     showMenu = !showMenu;
   }
@@ -28,41 +35,35 @@
             class="h-8 mr-3"
             alt="The Wright Way"
           />
-          <span
-            class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"
+          <span class="self-center text-xl font-semibold whitespace-nowrap"
             >The Wright Way</span
           >
         </a>
         <!-- Mobile menu button -->
         <div class="flex md:hidden">
-          <button
-            on:click={toggleNavbar}
-            type="button"
-            class="text-gray-800 hover:text-gray-400 focus:outline-none focus:text-gray-400"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-6 h-6"
+          <div class="flex flex-row gap-5">
+            <button on:click={toggleDarkMode}>
+              {#if isDarkMode}
+                <Icon icon="ic:round-dark-mode" />
+              {:else}
+                <Icon icon="ic:outline-dark-mode" />
+              {/if}
+            </button>
+            <button
+              on:click={toggleNavbar}
+              type="button"
+              class="text-gray-800 hover:text-gray-400 focus:outline-none focus:text-gray-400"
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-              />
-            </svg>
-          </button>
+              <Icon icon="gg:menu" />
+            </button>
+          </div>
         </div>
       </div>
 
       <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
       <div
-        class="flex-col mt-8 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0 {showMenu
-          ? 'flex'
-          : 'hidden'}"
+        class="flex-col mt-8 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0
+        {showMenu ? 'flex' : 'hidden'}"
       >
         <a class="text-gray-800 hover:text-blue-400" href="/about">About</a>
         <a class="text-gray-800 hover:text-blue-400" href="/projects"
