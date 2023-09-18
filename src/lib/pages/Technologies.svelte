@@ -1,6 +1,5 @@
 <script lang="ts">
   import TechCard from "$lib/components/TechCard.svelte";
-  import type { PageData } from "./$types";
   export let data: PageData;
 </script>
 

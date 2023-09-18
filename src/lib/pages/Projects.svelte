@@ -1,6 +1,4 @@
 <script lang="ts">
-  import type { PageData } from "./$types";
-  import Counter from "$lib/components/Counter.svelte";
   import ProjectCard from "$lib/components/ProjectCard.svelte";
   export let data: PageData;
 </script>

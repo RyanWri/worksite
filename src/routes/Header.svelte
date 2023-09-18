@@ -68,15 +68,11 @@
         {showMenu ? 'flex' : 'hidden'}"
         >
           <a class="text-gray-800 hover:text-blue-400" href="#about">About</a>
-          <a
-            class="text-gray-800 hover:text-blue-400"
-            href="/projects"
-            aria-current={$page.url.pathname === "/projects"}>Projects</a
+          <a class="text-gray-800 hover:text-blue-400" href="#projects"
+            >Projects</a
           >
-          <a
-            class="text-gray-800 hover:text-blue-400"
-            href="/technology"
-            aria-current={$page.url.pathname === "/technology"}>Technology</a
+          <a class="text-gray-800 hover:text-blue-400" href="#technologies"
+            >Technologies</a
           >
           <a class="text-gray-800 hover:text-blue-400" href="#contact"
             >Contact</a
