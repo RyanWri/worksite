@@ -1,5 +1,5 @@
 import type { PageServerLoad } from './$types';
-import { skills_by_category } from './data';
+import { skills_by_category } from '$lib/data/data';
 
 export const load = (async () => {
     return {skills: skills_by_category.map((skill) => ({

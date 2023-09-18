@@ -67,11 +67,7 @@
           class="flex-col mt-8 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0
         {showMenu ? 'flex' : 'hidden'}"
         >
-          <a
-            class="text-gray-800 hover:text-blue-400"
-            href="/about"
-            aria-current={$page.url.pathname === "/"}>About</a
-          >
+          <a class="text-gray-800 hover:text-blue-400" href="#about">About</a>
           <a
             class="text-gray-800 hover:text-blue-400"
             href="/projects"
@@ -82,10 +78,8 @@
             href="/technology"
             aria-current={$page.url.pathname === "/technology"}>Technology</a
           >
-          <a
-            class="text-gray-800 hover:text-blue-400"
-            aria-current={$page.url.pathname === "/contact"}
-            href="/contact">Contact</a
+          <a class="text-gray-800 hover:text-blue-400" href="#contact"
+            >Contact</a
           >
           <a
             class="text-gray-800 hover:text-blue-400"

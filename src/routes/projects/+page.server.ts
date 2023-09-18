@@ -1,5 +1,5 @@
 import type { PageServerLoad } from './$types';
-import { projects } from './data';
+import { projects } from '$lib/data/data';
 
 export const load = (async () => {
     return {posts: projects.map((project) => ({
