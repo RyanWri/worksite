@@ -2,3 +2,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.my-divider {
+  @apply border-t border-gray-600 shadow-md border-r-2 mb-2;
+}
+
+.page-title {
+  @apply text-2xl text-center font-bold;
+}

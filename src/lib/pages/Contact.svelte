@@ -1,8 +1,3 @@
-<script lang="ts">
-  import type { PageData } from "./$types";
-  export let data: PageData;
-</script>
-
 <div class="flex flex-col items-center justify-center min-h-screen">
   <div class="max-w-md px-6 py-8 bg-white shadow-md rounded-md">
     <h2 class="text-2xl font-semibold text-gray-800">Contact Us</h2>

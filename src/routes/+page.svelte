@@ -1,17 +1,25 @@
-<div class="flex h-screen">
-  <div
-    class="flex-1 flex-col bg-cover"
-    style="background-image: url('/images/welcome-bg-comp.jpg')"
-  >
-    <h1 class="text-2xl font-bold capitalize text-center">
-      Welcome to my website
-    </h1>
-    <p class="pt-6 text-xl mb-2 animated-text">
-      I am here to assist you with the navigation
-    </p>
-    <a href="/about" class="text-blue-500 mb-2 animated-paragraph">About</a>
-    <a href="/projects" class="text-blue-500 mb-2 animated-paragraph"
-      >Projects</a
-    >
-  </div>
+<script>
+  import About from "$lib/pages/About.svelte";
+  import Contact from "$lib/pages/Contact.svelte";
+  import Projects from "$lib/pages/Projects.svelte";
+  import Technologies from "$lib/pages/Technologies.svelte";
+  export let data;
+</script>
+
+<div id="about" class="flex h-screen">
+  <h2 class="page-title">About</h2>
+  <About />
+  <div class="my-divider" />
+</div>
+<div id="projects">
+  <h2 class="page-title">Projects</h2>
+  <Projects {data} />
+</div>
+<div id="technologies">
+  <h2 class="page-title">Technologies</h2>
+  <Technologies {data} />
+</div>
+<div id="contact">
+  <h2 class="page-title">Contact</h2>
+  <Contact />
 </div>
