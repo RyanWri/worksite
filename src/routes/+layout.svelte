@@ -4,6 +4,6 @@
 </script>
 
 <Header />
-<main class="h-screen w-screen">
+<main>
   <slot />
 </main>

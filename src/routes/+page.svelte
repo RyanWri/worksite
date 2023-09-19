@@ -3,20 +3,23 @@
   import Contact from "$lib/pages/Contact.svelte";
   import Projects from "$lib/pages/Projects.svelte";
   import Technologies from "$lib/pages/Technologies.svelte";
-  import Welcome from "./Welcome.svelte";
   export let data;
 </script>
 
-<Welcome />
-<div id="about">
+<div id="about" class="flex h-screen">
+  <h2 class="page-title">About</h2>
   <About />
-</div>
-<div id="contact">
-  <Contact />
+  <div class="my-divider" />
 </div>
 <div id="projects">
+  <h2 class="page-title">Projects</h2>
   <Projects {data} />
 </div>
 <div id="technologies">
+  <h2 class="page-title">Technologies</h2>
   <Technologies {data} />
+</div>
+<div id="contact">
+  <h2 class="page-title">Contact</h2>
+  <Contact />
 </div>
