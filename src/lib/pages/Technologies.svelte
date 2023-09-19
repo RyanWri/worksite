@@ -1,6 +1,6 @@
-<script lang="ts">
+<script>
   import TechCard from "$lib/components/TechCard.svelte";
-  export let data: PageData;
+  export let data;
 </script>
 
 <div>

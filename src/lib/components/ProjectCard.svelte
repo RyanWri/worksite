@@ -1,7 +1,7 @@
-<script lang="ts">
-  export let imagePath: string;
-  export let slug: string;
-  export let title: string;
+<script>
+  export let imagePath;
+  export let slug;
+  export let title;
 </script>
 
 <div class="bg-white shadow-md rounded-lg p-6">

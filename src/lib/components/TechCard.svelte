@@ -1,8 +1,8 @@
-<script lang="ts">
+<script>
   import Icon from "@iconify/svelte";
-  export let technologies: string[];
-  export let category: string;
-  export let type_icon: string;
+  export let technologies;
+  export let category;
+  export let type_icon;
 </script>
 
 <h2 class="text-2xl text-black mb-4 capitalize">{category}</h2>

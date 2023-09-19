@@ -1,12 +1,12 @@
 <!--   This header is mobile compatible -->
-<script lang="ts">
+<script>
   import { afterNavigate } from "$app/navigation";
   import { page } from "$app/stores";
   import Icon from "@iconify/svelte";
 
-  let showMenu: boolean = false;
+  let showMenu = false;
   // Add this to a component or layout file
-  let isDarkMode: boolean = false;
+  let isDarkMode = false;
 
   function toggleDarkMode() {
     isDarkMode = !isDarkMode;
@@ -21,7 +21,7 @@
   });
 </script>
 
-<header>
+<header class="sticky top-0 w-full shadow-md bg-white dark:bg-slate-400">
   <div>
     <div>
       <nav
