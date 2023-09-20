@@ -1,7 +1,6 @@
 <!--   This header is mobile compatible -->
 <script>
   import { afterNavigate } from "$app/navigation";
-  import { page } from "$app/stores";
   import Icon from "@iconify/svelte";
 
   let showMenu = false;
@@ -21,7 +20,7 @@
   });
 </script>
 
-<header class="sticky top-0 w-full shadow-md bg-white dark:bg-slate-400">
+<header class="dark-header">
   <div>
     <div>
       <nav
@@ -29,7 +28,7 @@
       >
         <div class="flex items-center justify-between">
           <a
-            class="flex text-xl font-bold text-gray-800 md:text-2xl hover:text-blue-400"
+            class="flex text-xl font-bold text-gray-800 dark:text-white md:text-2xl"
             href="/"
           >
             <img
@@ -51,11 +50,7 @@
                   <Icon icon="ic:outline-dark-mode" />
                 {/if}
               </button>
-              <button
-                on:click={toggleNavbar}
-                type="button"
-                class="text-gray-800 hover:text-gray-400 focus:outline-none focus:text-gray-400"
-              >
+              <button on:click={toggleNavbar} type="button">
                 <Icon icon="gg:menu" />
               </button>
             </div>
@@ -67,21 +62,12 @@
           class="flex-col mt-8 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0
         {showMenu ? 'flex' : 'hidden'}"
         >
-          <a class="text-gray-800 hover:text-blue-400" href="#about">About</a>
-          <a class="text-gray-800 hover:text-blue-400" href="#projects"
-            >Projects</a
-          >
-          <a class="text-gray-800 hover:text-blue-400" href="#technologies"
+          <a class="text-gray-800 dark:text-white" href="/projects">Projects</a>
+          <a class="text-gray-800 dark:text-white" href="/technologies"
             >Technologies</a
           >
-          <a class="text-gray-800 hover:text-blue-400" href="#contact"
-            >Contact</a
-          >
-          <a
-            class="text-gray-800 hover:text-blue-400"
-            href="/sandbox"
-            aria-current={$page.url.pathname === "/"}>Sandbox</a
-          >
+          <a class="text-gray-800 dark:text-white" href="/contact">Contact</a>
+          <a class="text-gray-800 dark:text-white" href="/sandbox">Sandbox</a>
         </div>
       </nav>
     </div>
