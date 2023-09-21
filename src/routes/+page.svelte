@@ -1,25 +1,41 @@
 <script>
-  import About from "$lib/pages/About.svelte";
-  import Contact from "$lib/pages/Contact.svelte";
-  import Projects from "$lib/pages/Projects.svelte";
-  import Technologies from "$lib/pages/Technologies.svelte";
-  export let data;
+  import { onMount } from "svelte";
+  let animate = false;
+
+  // Start the animation when the component mounts
+  onMount(() => {
+    animate = true;
+  });
 </script>
 
-<div id="about" class="flex h-screen">
-  <h2 class="page-title">About</h2>
-  <About />
-  <div class="my-divider" />
-</div>
-<div id="projects">
-  <h2 class="page-title">Projects</h2>
-  <Projects {data} />
-</div>
-<div id="technologies">
-  <h2 class="page-title">Technologies</h2>
-  <Technologies {data} />
-</div>
-<div id="contact">
-  <h2 class="page-title">Contact</h2>
-  <Contact />
+<div class="grid grid-cols-3 md:grid-rows-1 md:grid-cols-2 gap-2 p-2 mx-auto">
+  <div>
+    <img
+      src="/images/me.webp"
+      alt="Ryan Wright"
+      class="w-32 h-32 rounded-full"
+    />
+  </div>
+  <div class="col-span-2">
+    <h4 class="pr-3 pt-2 font-header text-xl text-black sm:text-lg lg:text-2xl">
+      <span class:animate class="animated-text">
+        Ryan (Ran) Wright,<br /> Software Engineer Consultant.
+      </span>
+    </h4>
+  </div>
+  <div class="col-span-3">
+    <p class="pt-2 text-xl leading-relaxed text-grey-20">
+      <span class:animate class="animated-paragraph">
+        I am a software engineer consultant, highly skilled professional who
+        provides expert advice and guidance on software development projects.
+        With a deep understanding of programming languages, frameworks, and best
+        practices, I help my clients optimize code, improve system performance,
+        and offer strategic recommendations to enhance software development
+        processes. After gaining technical expertise throughout multiple
+        projects across several industries I am able to help organizations
+        overcome complex challenges, streamline workflows, and deliver
+        high-quality software solutions.
+      </span>
+    </p>
+  </div>
 </div>
