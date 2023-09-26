@@ -68,10 +68,7 @@
           <a class="text-gray-800 dark:text-white" href="/education"
             >Education</a
           >
-          <a class="text-gray-800 dark:text-white" href="/projects">Projects</a>
-          <a class="text-gray-800 dark:text-white" href="/technologies"
-            >Technologies</a
-          >
+          <a class="text-gray-800 dark:text-white" href="/skills">Skills</a>
           <a class="text-gray-800 dark:text-white" href="/contact">Contact</a>
           <a class="text-gray-800 dark:text-white" href="/sandbox">Sandbox</a>
         </div>
