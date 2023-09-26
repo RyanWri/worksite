@@ -19,7 +19,7 @@
   <div class="col-span-2">
     <h4 class="pr-3 pt-2 font-header text-xl text-black sm:text-lg lg:text-2xl">
       <span class:animate class="animated-text">
-        Ryan (Ran) Wright,<br /> Software Engineer Consultant.
+        Ran Wright,<br /> Software Engineer.
       </span>
     </h4>
   </div>

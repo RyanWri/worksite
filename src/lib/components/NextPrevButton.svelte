@@ -2,7 +2,8 @@
   import { goto } from "$app/navigation";
   import Icon from "@iconify/svelte";
   import { page } from "$app/stores";
-
+  // const modules = import.meta.glob("../../routes/**/*.svelte");
+  // console.log(modules);
   const paths = ["/", "/projects", "/technologies", "/contact", "/sandbox"];
   const n = paths.length;
 
@@ -28,15 +29,18 @@
   }
 </script>
 
-<div class="grid-cols-2 gap-2 md:hidden">
+<div class="grid grid-row grid-cols-2 gap-2 mt-3 md:hidden">
   <div>
-    <button class="w-full bg-blue-400" on:click={nextPage}>
-      <Icon icon="carbon:next-filled" class="w-1/2" />
+    <button class="w-full rounded shadow-md" on:click={previousPage}>
+      <Icon icon="carbon:previous-filled" class="h-12 w-12" />
     </button>
   </div>
   <div>
-    <button class="w-full bg-blue-400" on:click={previousPage}>
-      <Icon icon="carbon:previous-filled" class="w-1/2" />
+    <button
+      class="w-full rounded shadow-md inline-flex items-end"
+      on:click={nextPage}
+    >
+      <Icon icon="carbon:next-filled" class="inline-block h-12 w-12" />
     </button>
   </div>
 </div>
