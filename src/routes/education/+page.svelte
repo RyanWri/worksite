@@ -2,19 +2,12 @@
   import { onMount } from "svelte";
   import { data } from "./data";
   let timelineData = data.educationTimeline;
-
-  onMount(() => {
-    // Sort the timeline data by date
-    timelineData = timelineData.sort(
-      (a, b) => new Date(b.date) - new Date(a.date)
-    );
-  });
 </script>
 
 <div class="container mx-auto">
   <h1 class="text-2xl font-bold mb-4">Education</h1>
   <ol class="relative border-l border-gray-200 mt-3">
-    {#each timelineData as item}
+    {#each timelineData.reverse() as item}
       <li class="mb-10 ml-4">
         <div
           class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"

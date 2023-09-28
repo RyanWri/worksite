@@ -71,7 +71,6 @@
           >
           <a class="text-gray-800 dark:text-white" href="/skills">Skills</a>
           <a class="text-gray-800 dark:text-white" href="/contact">Contact</a>
-          <a class="text-gray-800 dark:text-white" href="/sandbox">Sandbox</a>
         </div>
       </nav>
     </div>
