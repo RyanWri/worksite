@@ -12,6 +12,7 @@
 </script>
 
 <div class="container mx-auto">
+  <h1 class="text-2xl font-bold mb-4">Education</h1>
   <ol class="relative border-l border-gray-200 mt-3">
     {#each timelineData as item}
       <li class="mb-10 ml-4">
