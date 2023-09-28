@@ -2,41 +2,35 @@
   import { goto } from "$app/navigation";
   import Icon from "@iconify/svelte";
   import { page } from "$app/stores";
-
-  const paths = ["/", "/projects", "/technologies", "/contact", "/sandbox"];
-  const n = paths.length;
-
-  function indexOfPage(forward = true) {
-    let lastIndex = paths.lastIndexOf($page.url.pathname);
-    if (forward) {
-      return lastIndex === n - 1 ? 0 : lastIndex + 1;
-    } else {
-      return lastIndex === 0 ? n - 1 : lastIndex - 1;
-    }
-  }
+  import { data } from "$lib/data/routes";
+  let routes = data.routes;
 
   function nextPage() {
-    const forward = true;
-    const nextIndex = indexOfPage(forward);
-    goto(paths[nextIndex]);
+    goto(routes[$page.url.pathname]);
   }
 
   function previousPage() {
-    const forward = false;
-    const prevIndex = indexOfPage(forward);
-    goto(paths[prevIndex]);
+    const numberOfEntries = history.length;
+    if (numberOfEntries <= 1) {
+      goto("/");
+    } else {
+      history.back();
+    }
   }
 </script>
 
-<div class="grid-cols-2 gap-2 md:hidden">
-  <div>
-    <button class="w-full bg-blue-400" on:click={nextPage}>
-      <Icon icon="carbon:next-filled" class="w-1/2" />
+<div class="flex mt-3 md:hidden">
+  <div class="flex w-1/2">
+    <button class="w-full rounded shadow-md" on:click={previousPage}>
+      <Icon icon="carbon:previous-filled" class="h-12 w-12" />
     </button>
   </div>
-  <div>
-    <button class="w-full bg-blue-400" on:click={previousPage}>
-      <Icon icon="carbon:previous-filled" class="w-1/2" />
+  <div class="flex w-1/2">
+    <button
+      class="flex w-full rounded shadow-md items-center justify-end"
+      on:click={nextPage}
+    >
+      <Icon icon="carbon:next-filled" class="h-12 w-12" />
     </button>
   </div>
 </div>
