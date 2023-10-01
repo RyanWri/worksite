@@ -1,6 +1,7 @@
 <script>
-  import { data } from "./data";
+  import { profile_details } from "./data";
   import { onMount } from "svelte";
+  import ProfileGrid from "$lib/components/ProfileGrid.svelte";
 
   let animate = false;
 
@@ -10,9 +11,9 @@
   });
 </script>
 
-<div class="container mx-auto py-6">
-  <h1 class="text-2xl font-bold mb-4">About Me</h1>
-  <div class="shadow rounded-lg p-6">
+<div class="container mx-auto py-4">
+  <h1 class="text-2xl font-bold mb-3">About Me</h1>
+  <div class="shadow rounded-lg p-3">
     <div class="flex items-center justify-center mb-4">
       <img
         src="/images/me.webp"
@@ -20,18 +21,13 @@
         class="w-32 h-32 rounded-full"
       />
     </div>
-    <div class="mb-4">
-      <h2 class="text-xl font-semibold">Name</h2>
-      <h3 class="text-lg font-semibold">{data.name}</h3>
-    </div>
-    <div class="mb-4">
-      <h2 class="text-xl font-semibold">Occupation</h2>
-      <p class="text-lg font-semibold">{data.occupation}</p>
-    </div>
-    <div class="mb-4">
+    <ProfileGrid {profile_details} />
+    <div class="mb-4 md:ml-8">
       <h2 class="text-xl font-semibold">Bio</h2>
       <p class="text-lg">
-        <span class:animate class="animated-paragraph">{data.bio} </span>
+        <span class:animate class="animated-paragraph"
+          >{profile_details.bio}
+        </span>
       </p>
     </div>
   </div>

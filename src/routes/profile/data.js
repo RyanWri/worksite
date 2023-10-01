@@ -1,6 +1,10 @@
-export const data = {
+export const profile_details = {
   name: "Ran Wright",
   occupation: "Software Engineer",
+  location: "Remote",
+  eligible_countries: ["Canada/", "Europe/", "Israel"],
+  email: "email@email.com",
+  phone: "000-000-0000",
   bio: `I am a software engineer consultant, highly skilled professional who
   provides expert advice and guidance on software development projects.
   With a deep understanding of programming languages, frameworks, and best
