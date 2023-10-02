@@ -1,5 +1,8 @@
 <script>
+  import { profile_details } from "$lib/data/profile_details";
   import { onMount } from "svelte";
+  import ProfileGrid from "$lib/components/ProfileGrid.svelte";
+  import HomePageButtonsNav from "../lib/components/HomePageButtonsNav.svelte";
   let animate = false;
 
   // Start the animation when the component mounts
@@ -8,34 +11,25 @@
   });
 </script>
 
-<div class="grid grid-cols-3 md:grid-rows-1 md:grid-cols-2 gap-2 p-2 mx-auto">
-  <div>
-    <img
-      src="/images/me.webp"
-      alt="Ryan Wright"
-      class="w-32 h-32 rounded-full"
-    />
+<div class="container mx-auto py-4">
+  <h1 class="text-2xl font-bold mb-3">About Me</h1>
+  <div class="shadow rounded-lg p-3">
+    <div class="flex items-center justify-center mb-4">
+      <img
+        src="/images/me.webp"
+        alt="Ryan Wright"
+        class="w-32 h-32 rounded-full"
+      />
+    </div>
+    <ProfileGrid {profile_details} />
+    <div class="mb-4 md:ml-8">
+      <h2 class="text-xl font-semibold">Bio</h2>
+      <p class="mt-1 text-lg md:text-xl">
+        {#each profile_details.bio as bullet}
+          <span class:animate class="animated-paragraph">{bullet} <br /> </span>
+        {/each}
+      </p>
+    </div>
   </div>
-  <div class="col-span-2">
-    <h4 class="font-header text-2xl pl-6 pt-8">
-      <span class:animate class="animated-text">
-        Ran Wright,<br /> Software Engineer
-      </span>
-    </h4>
-  </div>
-  <div class="col-span-3">
-    <p class="pt-2 text-xl leading-relaxed text-grey-20">
-      <span class:animate class="animated-paragraph">
-        I am a software engineer consultant, highly skilled professional who
-        provides expert advice and guidance on software development projects.
-        With a deep understanding of programming languages, frameworks, and best
-        practices, I help my clients optimize code, improve system performance,
-        and offer strategic recommendations to enhance software development
-        processes. After gaining technical expertise throughout multiple
-        projects across several industries I am able to help organizations
-        overcome complex challenges, streamline workflows, and deliver
-        high-quality software solutions.
-      </span>
-    </p>
-  </div>
+  <HomePageButtonsNav />
 </div>
