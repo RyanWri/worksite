@@ -7,7 +7,7 @@
 </script>
 
 <Header />
-<main class="dark-main-content">
+<main>
   <slot />
   <NextPrevButton />
 </main>

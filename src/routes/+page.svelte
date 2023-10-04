@@ -12,7 +12,7 @@
 </script>
 
 <div class="container mx-auto py-4">
-  <h1 class="text-2xl font-bold mb-3">About Me</h1>
+  <h1 class="page-title">About Me</h1>
   <div class="shadow rounded-lg p-3">
     <div class="flex items-center justify-center mb-4">
       <img

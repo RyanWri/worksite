@@ -15,6 +15,7 @@ export const data = {
         "skill-icons:cpp",
         "skill-icons:java-dark",
         "skill-icons:javascript",
+        "devicon:go",
       ],
     },
     {
@@ -24,6 +25,7 @@ export const data = {
         "skill-icons:postgresql-light",
         "skill-icons:mongodb",
         "skill-icons:redis-light",
+        "devicon:elasticsearch",
       ],
     },
     {
@@ -32,6 +34,7 @@ export const data = {
         "devicon:apachespark-wordmark",
         "devicon:apachekafka-wordmark",
         "devicon:apacheairflow",
+        "devicon:hadoop",
       ],
     },
     {
@@ -39,10 +42,20 @@ export const data = {
       technologies: [
         "devicon:linux",
         "devicon:docker-wordmark",
-        "devicon:argocd-wordmark",
+        "skill-icons:kubernetes",
         "devicon:git-wordmark",
         "devicon:gitlab-wordmark",
+        "devicon:argocd-wordmark",
         "devicon:terraform-wordmark",
+      ],
+    },
+    {
+      category: "monitoring",
+      technologies: [
+        "devicon:grafana-wordmark",
+        "logos:datadog",
+        "skill-icons:prometheus",
+        "logos:splunk",
       ],
     },
   ],

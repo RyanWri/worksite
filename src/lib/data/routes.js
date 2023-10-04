@@ -3,6 +3,7 @@ export const data = {
     "/": "/experience",
     "/experience": "/education",
     "/education": "/skills",
-    "/skills": "/",
+    "/skills": "/hobbies",
+    "/hobbies": "/",
   },
 };

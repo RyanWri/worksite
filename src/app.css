@@ -8,13 +8,18 @@
 }
 
 .page-title {
-  @apply text-2xl text-center font-bold;
+  @apply text-2xl text-center underline italic font-bold mt-1 mb-4;
 }
 
 .dark-header {
   @apply top-0 w-full shadow-md text-black dark:text-white dark:bg-slate-800;
 }
 
+.dark-footer {
+  @apply mb-0 dark:mb-0 w-full shadow-md text-black dark:text-white dark:bg-slate-800;
+}
+
 .dark-main-content {
-  @apply dark:bg-gradient-to-r dark:from-cyan-400 dark:to-blue-500;
+  @apply bg-gradient-to-r from-gray-100 to-slate-300 bg-opacity-90 text-black;
+  @apply dark:bg-gradient-to-r dark:from-cyan-600 dark:to-slate-900 dark:text-white;
 }
