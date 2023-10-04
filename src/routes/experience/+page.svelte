@@ -5,7 +5,7 @@
 </script>
 
 <div class="container mx-auto">
-  <h1 class="text-2xl font-bold mb-4">Work Experience</h1>
+  <h1 class="page-title">Work Experience</h1>
   <ol class="relative border-l border-gray-200 mt-3">
     {#each timelineData.reverse() as item}
       <li class="mb-10 ml-4">

@@ -5,7 +5,7 @@
 </script>
 
 <div class="container mx-auto">
-  <h1 class="text-2xl font-bold mb-4">Skills</h1>
+  <h1 class="page-title">Skills</h1>
   {#each skills as skills_item}
     <SkillsIconGrid {skills_item} />
     <div class="border-t divide-y-2 divide-dashed bg-gray-600 my-2" />

@@ -24,7 +24,7 @@
   <div>
     <div>
       <nav
-        class="container px-6 py-8 mx-auto md:flex md:justify-between md:items-center"
+        class="container px-6 py-6 mx-auto md:flex md:justify-between md:items-center"
       >
         <div class="flex items-center justify-between">
           <a
@@ -45,7 +45,7 @@
             <div class="flex flex-row gap-5">
               <button on:click={toggleDarkMode}>
                 {#if isDarkMode}
-                  <Icon icon="ic:round-dark-mode" />
+                  <Icon icon="octicon:sun-24" />
                 {:else}
                   <Icon icon="ic:outline-dark-mode" />
                 {/if}
@@ -69,6 +69,20 @@
             >Education</a
           >
           <a class="text-gray-800 dark:text-white" href="/skills">Skills</a>
+          <a class="text-gray-800 dark:text-white" href="/hobbies">Hobbies</a>
+        </div>
+
+        <!-- dark mode and github logo on large screens-->
+        <div class="flex">
+          <div class="flex flex-row gap-4 invisible md:visible">
+            <button on:click={toggleDarkMode}>
+              {#if isDarkMode}
+                <Icon icon="octicon:sun-24" />
+              {:else}
+                <Icon icon="ic:outline-dark-mode" />
+              {/if}
+            </button>
+          </div>
         </div>
       </nav>
     </div>
