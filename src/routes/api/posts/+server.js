@@ -1,22 +1,34 @@
-import { SITE_KEY, SECERT_KEY } from "$env/static/private";
+import { SITE_KEY, SECERT_KEY, GOOGLE_PROJECT_ID } from "$env/static/private";
 
-console.log(SITE_KEY, SECERT_KEY);
+console.log(SITE_KEY, SECERT_KEY, GOOGLE_PROJECT_ID);
 
-export const POST = async ({ request }) => {
-  const { responseToken } = request.body;
-  console.log(responseToken);
+// POST https://recaptchaenterprise.googleapis.com/v1/projects/PROJECT_ID/assessments
 
-  const url = "https://www.google.com/recaptcha/api/siteverify";
+export const POST = async ({ responseToken }) => {
+  console.log("now is", responseToken);
+
+  const url = `https://recaptchaenterprise.googleapis.com/v1/projects/${GOOGLE_PROJECT_ID}/assessments`;
 
   // Verify the reCAPTCHA response token
   // Call the verifyRecaptcha function from the previous example
-  const isHuman = await fetch(url, {
+  const response = await fetch(url, {
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
     },
-    body: `secret=${SECERT_KEY}&response=${responseToken}`,
+    body: {
+      event: {
+        token: responseToken,
+        siteKey: SITE_KEY,
+        expectedAction: "LOGIN",
+      },
+    },
   });
+  console.log(response);
 
-  return new Response(JSON.stringify({ success: isHuman }), { status: 201 });
+  if (response.riskAnalysis?.score < 0.5) {
+    return new Response(JSON.stringify({ success: false }), { status: 400 });
+  } else {
+    return new Response(JSON.stringify({ success: true }), { status: 201 });
+  }
 };
