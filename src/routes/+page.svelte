@@ -11,7 +11,16 @@
   });
 </script>
 
+<head>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+
 <div class="container mx-auto py-4">
+  <form action="?" method="POST">
+    <div class="g-recaptcha" data-sitekey="your_site_key" />
+    <br />
+    <input type="submit" value="Submit" />
+  </form>
   <h1 class="page-title">About Me</h1>
   <div class="shadow rounded-lg p-3">
     <div class="flex items-center justify-center mb-4">
