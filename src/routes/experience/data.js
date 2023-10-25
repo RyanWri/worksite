@@ -24,7 +24,7 @@ export const data = {
       date: "2021 - 2022",
       logo: "rakuten_viber_logo.webp",
       company: "Rakuten Viber",
-      title: "Software Engineer",
+      title: "MLOps Engineer",
       description: [
         "Collaborated with cross-functional teams to design and build scalable data pipelines, reducing data processing time by 17% and improving overall system efficiency.",
         "Developed and implemented machine learning algorithms to optimize models in production",

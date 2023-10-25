@@ -31,11 +31,19 @@
             class="flex text-xl font-bold text-gray-800 dark:text-white md:text-2xl"
             href="/"
           >
-            <img
-              src={"/images/brand_logo.svg"}
-              class="h-8 mr-3"
-              alt="The Wright Way"
-            />
+            {#if isDarkMode}
+              <img
+                src={"/images/brand_logo_white.svg"}
+                class="h-8 mr-3"
+                alt="The Wright Way"
+              />
+            {:else}
+              <img
+                src={"/images/brand_logo.svg"}
+                class="h-8 mr-3"
+                alt="The Wright Way"
+              />
+            {/if}
             <span class="self-center text-xl font-semibold whitespace-nowrap"
               >The Wright Way</span
             >
@@ -62,6 +70,7 @@
           class="flex-col mt-8 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0
         {showMenu ? 'flex' : 'hidden'}"
         >
+          <a class="text-gray-800 dark:text-white" href="/profile">Profile</a>
           <a class="text-gray-800 dark:text-white" href="/experience"
             >Work Experience</a
           >

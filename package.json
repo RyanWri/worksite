@@ -23,5 +23,8 @@
     "vite": "^4.4.2"
   },
   "type": "module",
-  "dependencies": {}
+  "dependencies": {
+    "@google-cloud/recaptcha-enterprise": "^4.0.1",
+    "axios": "^1.5.1"
+  }
 }
