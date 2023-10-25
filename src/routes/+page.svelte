@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
   let animate = false;
   export let data;
+  const { abilities } = data;
   // Start the animation when the component mounts
   onMount(() => {
     animate = true;
@@ -18,7 +19,7 @@
     >
       <h1 class="text-4xl font-bold">I am a versatile developer</h1>
       <p class="text-xl md:text-2xl pt-3">
-        {#each data.abilities as bullet}
+        {#each abilities as bullet}
           <span class:animate class="animated-paragraph">{bullet} <br /> </span>
         {/each}
       </p>

@@ -15,7 +15,6 @@
   });
 </script>
 
-<button on:click={toggleProfile}> Show Profile </button>
 {#if showProfile}
   <div class="container mx-auto py-4">
     <h1 class="page-title">About Me</h1>
@@ -41,4 +40,11 @@
     </div>
     <HomePageButtonsNav />
   </div>
+{:else}
+  <button
+    on:click={toggleProfile}
+    class="rounded-full shadow-sm bg-cyan-300 items-center justify-center w-1/3 h-1/4"
+  >
+    Show Profile
+  </button>
 {/if}
