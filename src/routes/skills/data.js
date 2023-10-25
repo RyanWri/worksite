@@ -19,6 +19,15 @@ export const data = {
       ],
     },
     {
+      category: "Web Frameworks",
+      technologies: [
+        "devicon:svelte",
+        "devicon:react-wordmark",
+        "devicon-plain:django-wordmark",
+        "skill-icons:tailwindcss-dark",
+      ],
+    },
+    {
       category: "database",
       technologies: [
         "skill-icons:mysql-light",
