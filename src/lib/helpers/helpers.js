@@ -9,3 +9,17 @@ export const read_and_parse_json = async (path) => {
     return null;
   }
 };
+
+export const readAndParseJson = async (path) => {
+  fetch(path)
+    .then((response) => response.json())
+    .then((data) => {
+      // Use the data from the JSON file
+      console.log(data);
+      return data;
+    })
+    .catch((error) => {
+      // Handle any errors
+      console.error("An error occurred:", error);
+    });
+};
