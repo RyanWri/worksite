@@ -2,7 +2,7 @@
 import { read_and_parse_json } from "$lib/helpers/helpers";
 
 export async function load() {
-  const skills = await read_and_parse_json("src/lib/data/skills.json");
-  if (!skills) return {};
-  else return skills;
+  const hobbies = await read_and_parse_json("src/lib/data/hobbies.json");
+  if (!hobbies) return {};
+  return hobbies;
 }
