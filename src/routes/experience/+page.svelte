@@ -1,6 +1,6 @@
 <script>
   export let data;
-  $: timelineData = data.workExperiencenTimeline;
+  $: timelineData = data.workExperiencenTimeline.workExperiencenTimeline;
 </script>
 
 {#if timelineData && timelineData.length > 0}

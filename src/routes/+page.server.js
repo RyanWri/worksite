@@ -1,11 +1,13 @@
-import fs from "fs";
+/** @type {import('./$types').PageLoad} */
 
-export async function load() {
-  const jsonData = fs.readFileSync(
-    "src/lib/data/home_page_captions.json",
-    "utf-8"
-  );
-  const captions = JSON.parse(jsonData);
+export const load = async ({ params }) => {
+  const data = await (await import("$lib/data/homePageCaptions.json")).default;
 
-  return captions;
-}
+  if (!data) {
+    throw error(404, "Captions not found!");
+  }
+
+  return {
+    captions: data,
+  };
+};

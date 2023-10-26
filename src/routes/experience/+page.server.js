@@ -1,11 +1,13 @@
-import fs from "fs";
+/** @type {import('./$types').PageLoad} */
 
-export async function load() {
-  const jsonData = fs.readFileSync(
-    "src/lib/data/work_experience.json",
-    "utf-8"
-  );
-  const workExperiencenTimeline = JSON.parse(jsonData);
+export const load = async ({ params }) => {
+  const data = await (await import("$lib/data/workExperience.json")).default;
 
-  return workExperiencenTimeline;
-}
+  if (!data) {
+    throw error(404, "work experience not found!");
+  }
+
+  return {
+    workExperiencenTimeline: data,
+  };
+};

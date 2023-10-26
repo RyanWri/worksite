@@ -1,7 +1,7 @@
 <script>
   import { onMount } from "svelte";
   export let data;
-  $: captions = data.captions;
+  $: captions = data.captions.captions;
   let animate = false;
 
   // Start the animation when the component mounts
