@@ -41,10 +41,12 @@
     <HomePageButtonsNav />
   </div>
 {:else}
-  <button
-    on:click={toggleProfile}
-    class="rounded-full shadow-sm bg-cyan-300 items-center justify-center w-1/3 h-1/4"
-  >
-    Show Profile
-  </button>
+  <div class="flex items-center justify-center h-screen">
+    <button
+      on:click={toggleProfile}
+      class="bg-blue-500 hover:bg-cyan-700 w-1/2 h-1/4 md:w-1/4 md:h-1/5 font-bold py-2 px-4 shadow-sm rounded-full"
+    >
+      Show Profile
+    </button>
+  </div>
 {/if}
