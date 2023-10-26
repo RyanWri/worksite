@@ -5,8 +5,8 @@
     "dev": "vite dev",
     "build": "vite build",
     "preview": "vite preview",
-    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
+    "check": "svelte-kit sync && svelte-check",
+    "check:watch": "svelte-kit sync && svelte-check --watch"
   },
   "devDependencies": {
     "@fontsource/fira-mono": "^4.5.10",
@@ -25,6 +25,7 @@
   "type": "module",
   "dependencies": {
     "@google-cloud/recaptcha-enterprise": "^4.0.1",
+    "@vercel/kv": "^0.2.3",
     "axios": "^1.5.1"
   }
 }

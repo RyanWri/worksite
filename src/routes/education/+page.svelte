@@ -1,7 +1,6 @@
 <script>
-  import { onMount } from "svelte";
-  import { data } from "./data";
-  let timelineData = data.educationTimeline;
+  export let data;
+  let timelineData = data.educationTimeline.educationTimeline;
 </script>
 
 <div class="container mx-auto">

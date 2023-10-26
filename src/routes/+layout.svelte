@@ -7,7 +7,7 @@
 </script>
 
 <Header />
-<main>
+<main class="min-h-screen">
   <slot />
   <NextPrevButton />
 </main>
