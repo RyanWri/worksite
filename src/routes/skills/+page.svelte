@@ -1,7 +1,7 @@
 <script>
   import SkillsIconGrid from "$lib/components/SkillsIconGrid.svelte";
   export let data;
-  $: skills = data.skills;
+  $: skills = data.skills.skills;
 </script>
 
 {#if skills && skills.length > 0}

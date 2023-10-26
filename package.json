@@ -25,6 +25,7 @@
   "type": "module",
   "dependencies": {
     "@google-cloud/recaptcha-enterprise": "^4.0.1",
+    "@vercel/kv": "^0.2.3",
     "axios": "^1.5.1"
   }
 }

@@ -1,7 +1,7 @@
 /** @type {import('./$types').PageLoad} */
 
 export const load = async ({ params }) => {
-  const data = await (await import("$lib/data/skills.json")).default;
+  const data = await (await import("$lib/data/profile_details.json")).default;
 
   if (!data) {
     // throw redirect(301, '/products');
@@ -9,6 +9,6 @@ export const load = async ({ params }) => {
   }
 
   return {
-    skills: data,
+    profileDetails: data,
   };
 };

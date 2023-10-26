@@ -2,7 +2,7 @@
   import Icon from "@iconify/svelte";
   export let data;
 
-  $: hobbies = data.hobbies;
+  $: hobbies = data.hobbies.hobbies;
 </script>
 
 {#if hobbies && hobbies.length > 0}
