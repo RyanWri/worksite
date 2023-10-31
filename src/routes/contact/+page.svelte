@@ -45,15 +45,11 @@
       messageText,
     };
 
-    // Send email
-    console.log(formData);
-
-    // Reset form fields
-    senderName = "";
-    company = "";
-    email = "";
-    linkedin = "";
-    messageText = "";
+    // verify sender email address
+    const resp = await fetch(`/api/mailer/${email}`, {
+      method: "GET",
+    });
+    console.log(resp);
   }
 </script>
 
