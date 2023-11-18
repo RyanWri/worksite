@@ -20,9 +20,9 @@
         class="absolute inset-0 flex flex-col md:items-center md:justify-center bg-opacity-75 text-white"
       >
         <h1 class="text-4xl font-bold">I am a versatile developer</h1>
-        <p class="text-xl md:text-2xl pt-3">
+        <p class="text-xl md:text-2xl lg:text-3xl pt-3">
           {#each captions as caption}
-            <span class:animate class="animated-paragraph"
+            <span class:animate class="animated-paragraph mb-1 leading-7"
               >{caption} <br />
             </span>
           {/each}
