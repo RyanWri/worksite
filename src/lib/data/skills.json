@@ -19,12 +19,13 @@
       ]
     },
     {
-      "category": "Web Frameworks",
+      "category": "Machine Learning Frameworks",
       "technologies": [
-        "devicon:svelte",
-        "devicon:react-wordmark",
-        "devicon-plain:django-wordmark",
-        "skill-icons:tailwindcss-dark"
+        "logos:hugging-face-icon",
+        "devicon:pytorch",
+        "devicon:tensorflow",
+        "devicon:keras",
+        "devicon-plain:streamlit-wordmark"
       ]
     },
     {
@@ -56,6 +57,15 @@
         "devicon:gitlab-wordmark",
         "devicon:argocd-wordmark",
         "devicon:terraform-wordmark"
+      ]
+    },
+    {
+      "category": "Web Frameworks",
+      "technologies": [
+        "devicon:svelte",
+        "devicon:react-wordmark",
+        "devicon-plain:django-wordmark",
+        "skill-icons:tailwindcss-dark"
       ]
     },
     {
