@@ -1,33 +1,74 @@
 <script>
+  import Card from "$lib/components/Card.svelte";
   import { onMount } from "svelte";
-  export let data;
-  $: captions = data.captions.captions;
-  let animate = false;
 
-  // Start the animation when the component mounts
-  onMount(() => {
-    animate = true;
+  let data = {};
+  let cards = [];
+  let aboutMeText = "";
+  let words = [];
+  let currentWordIndex = 0;
+  let cardsToShow = 0;
+
+  onMount(async () => {
+    // Fetch data for cards
+    const response = await fetch("/data/new_home.json");
+    if (response.ok) {
+      data = await response.json();
+
+      // set variables
+      cards = data.cards;
+      aboutMeText = data.intro;
+
+      // Show animations
+      words = aboutMeText.split(" ");
+      const aboutMeInterval = setInterval(() => {
+        if (currentWordIndex < words.length) {
+          currentWordIndex++;
+        } else {
+          clearInterval(aboutMeInterval);
+
+          // Start showing the cards one by one after the about me section is done
+          const cardsInterval = setInterval(() => {
+            if (cardsToShow < cards.length) {
+              cardsToShow++;
+            } else {
+              clearInterval(cardsInterval);
+            }
+          }, 600);
+        }
+      }, 4000 / words.length);
+    } else {
+      console.error("Failed to fetch data");
+    }
   });
 </script>
 
-{#if captions && captions.length > 0}
-  <div class="relative min-h-screen m-0">
-    <div
-      class="bg-cover bg-no-repeat bg-center absolute inset-0 animated-background"
-      style="background-image: url('/images/paul-frenzel-MnHQMzC6n-o-unsplash.jpg');"
-    >
-      <div
-        class="absolute inset-0 flex flex-col md:items-center md:justify-center bg-opacity-75 text-white"
-      >
-        <h1 class="text-4xl font-bold">I am a versatile developer</h1>
-        <p class="text-xl md:text-2xl lg:text-3xl pt-3">
-          {#each captions as caption}
-            <span class:animate class="animated-paragraph mb-1 leading-7"
-              >{caption} <br />
-            </span>
-          {/each}
-        </p>
-      </div>
-    </div>
+<div class="container mx-auto p-4">
+  <!-- About Me Section -->
+  <div class="about-me">
+    {#each words.slice(0, currentWordIndex) as word}
+      <span class="text-2xl">{word} </span>
+    {/each}
   </div>
-{/if}
+
+  {#if cards}
+    <!-- Cards Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      {#each cards.slice(0, cardsToShow) as card}
+        <Card
+          image={card.image}
+          title={card.title}
+          description={card.description}
+        />
+      {/each}
+    </div>
+  {/if}
+</div>
+
+<style>
+  .about-me {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+  }
+</style>
