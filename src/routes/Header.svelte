@@ -81,6 +81,7 @@
           >
           <a class="text-gray-800 dark:text-white" href="/skills">Skills</a>
           <a class="text-gray-800 dark:text-white" href="/hobbies">Hobbies</a>
+          <a href="/about" class="text-gray-800 dark:text-white">About Us</a>
         </div>
 
         <!-- dark mode and github logo on large screens-->
