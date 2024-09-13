@@ -1,0 +1,42 @@
+[
+  {
+    "company": "Cloudyo",
+    "purpose": "Purpose A",
+    "technologies": ["skill-icons:aws-dark"]
+  },
+  {
+    "company": "Rise Codes",
+    "purpose": "Purpose B",
+    "technologies": ["skill-icons:aws-dark"]
+  },
+  {
+    "company": "DNA",
+    "purpose": "Purpose C",
+    "technologies": ["skill-icons:aws-dark"]
+  },
+  {
+    "company": "WIB API Security",
+    "purpose": "Purpose A",
+    "technologies": ["skill-icons:aws-dark"]
+  },
+  {
+    "company": "Headon Technologies",
+    "purpose": "Purpose B",
+    "technologies": ["skill-icons:aws-dark"]
+  },
+  {
+    "company": "TSG",
+    "purpose": "Purpose C",
+    "technologies": ["skill-icons:aws-dark"]
+  },
+  {
+    "company": "Akamai Technologies",
+    "purpose": "Purpose B",
+    "technologies": ["skill-icons:aws-dark"]
+  },
+  {
+    "company": "Rakuten",
+    "purpose": "Purpose C",
+    "technologies": ["skill-icons:aws-dark"]
+  }
+]
