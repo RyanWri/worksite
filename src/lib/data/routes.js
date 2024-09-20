@@ -1,7 +1,6 @@
 export const data = {
   routes: {
-    "/": "/profile",
-    "/profile": "/experience",
+    "/": "/experience",
     "/experience": "/education",
     "/education": "/skills",
     "/skills": "/hobbies",

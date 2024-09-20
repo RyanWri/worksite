@@ -1,78 +1,68 @@
 <script>
-    // Add any dynamic data or imports if needed in the future
+    import ClientsBars from "$lib/components/ClientsBar.svelte";
+
+    // Array of logo image URLs to pass to the component
+    let logos = [
+        "/images/akamai_logo.webp",
+        "/images/cloudyo_logo.webp",
+        "/images/rakuten_viber_logo.webp",
+    ];
+    let team = [
+        {
+            name: "Ryan Wright",
+            position: "CEO",
+            description:
+                "Ryan leads the company with over 10 years of experience in tech and business.",
+            avatar: "/images/me.webp",
+        },
+    ];
 </script>
 
-<div>
-    <section class="py-12">
-        <div class="container mx-auto px-4 text-center">
-            <h1 class="page-title mb-6">About Us</h1>
-            <p class="text-lg leading-relaxed mb-12">
-                We are passionate engineers specializing in data platforms and
-                AI. Our mission is to deliver cutting-edge solutions tailored to
-                modern business needs.
-            </p>
+<!-- Management Team Section -->
+<section class="bg-gray-100 dark:bg-gray-900 py-12">
+    <div class="container mx-auto">
+        <h2
+            class="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8"
+        >
+            Management Team
+        </h2>
 
-            <div
-                class="max-w-sm mx-auto rounded overflow-hidden shadow-lg bg-white p-6"
-            >
-                <img
-                    class="w-24 h-24 rounded-full mx-auto"
-                    src="/images/me.webp"
-                    alt="CEO"
-                />
-                <h2 class="text-xl font-semibold mt-4">Ryan (Ran) Wright</h2>
-                <p class="text-gray-500">Founder & CEO</p>
-                <p class="text-gray-600 mt-4">
-                    With over 10 years of experience in AI and data platforms,
-                    Ryan leads the team to create groundbreaking solutions.
-                </p>
-            </div>
-        </div>
-    </section>
-    <section class="bg-white py-12">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">
-                Our Clients
-            </h2>
-
-            <!-- Container for infinite scroll -->
-            <div class="relative overflow-hidden">
-                <div class="flex space-x-6 animate-scroll">
-                    <!-- Add client logos here -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {#each team as member}
+                <div
+                    class="flex flex-col items-center bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 text-center"
+                >
                     <img
-                        src="/images/cloudyo_logo.webp"
-                        alt="Client 1"
-                        class="h-16 w-16 sm:h-20 sm:w-20 lg:h-24 lg:w-24 object-contain"
+                        src={member.avatar}
+                        alt={member.name}
+                        class="h-24 w-24 rounded-full mb-4 object-cover"
                     />
-                    <img
-                        src="/images/commfident-logo.webp"
-                        alt="Client 2"
-                        class="h-16 w-16 sm:h-20 sm:w-20 lg:h-24 lg:w-24 object-contain"
-                    />
-                    <img
-                        src="/images/rakuten_viber_logo.webp"
-                        alt="Client 3"
-                        class="h-16 w-16 sm:h-20 sm:w-20 lg:h-24 lg:w-24 object-contain"
-                    />
-
-                    <!-- Duplicate logos to create infinite scroll -->
-                    <img
-                        src="/images/cloudyo_logo.webp"
-                        alt="Client 1"
-                        class="h-16 w-16 sm:h-20 sm:w-20 lg:h-24 lg:w-24 object-contain"
-                    />
-                    <img
-                        src="/images/commfident-logo.webp"
-                        alt="Client 2"
-                        class="h-16 w-16 sm:h-20 sm:w-20 lg:h-24 lg:w-24 object-contain"
-                    />
-                    <img
-                        src="/images/rakuten_viber_logo.webp"
-                        alt="Client 3"
-                        class="h-16 w-16 sm:h-20 sm:w-20 lg:h-24 lg:w-24 object-contain"
-                    />
+                    <h3
+                        class="text-xl font-semibold text-gray-900 dark:text-white"
+                    >
+                        {member.name}
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        {member.position}
+                    </p>
+                    <p class="mt-2 text-gray-500 dark:text-gray-300">
+                        {member.description}
+                    </p>
                 </div>
-            </div>
+            {/each}
         </div>
-    </section>
-</div>
+    </div>
+</section>
+
+<section class="text-center py-12">
+    <h1 class="page-title">About Us</h1>
+    <p class="mt-4 text-lg text-gray-700 dark:text-gray-400">
+        We provide cutting-edge solutions for businesses using advanced
+        technologies.
+    </p>
+
+    <!-- Client logos component -->
+    <div class="mt-12">
+        <ClientsBars {logos} />
+    </div>
+</section>

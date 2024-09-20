@@ -1,29 +1,67 @@
-/* Write your global styles here, in PostCSS syntax */
+/* Global styles */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-.my-divider {
-  @apply border-t border-gray-600 shadow-md border-r-2 mb-2;
+/* Base styles using Tailwind-provided classes */
+@layer base {
+  html {
+    font-family: "Fira Mono", monospace;
+  }
+  h1 {
+    @apply text-6xl font-bold;
+  }
+  h2 {
+    @apply text-5xl font-bold;
+  }
+  h3 {
+    @apply text-4xl font-bold;
+  }
+  h4 {
+    @apply text-3xl font-bold;
+  }
+  h5 {
+    @apply text-2xl font-bold;
+  }
+  h6 {
+    @apply text-xl font-bold;
+  }
 }
 
+/* Simplified body style */
+body {
+  @apply min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white;
+}
+
+/* Simple utility class for animated paragraph */
+.animated-paragraph {
+  animation: fadeIn 3s ease-in-out forwards;
+}
+
+/* Reusable divider */
+.my-divider {
+  @apply border-t border-gray-600 mb-2;
+}
+
+/* Page title style */
 .page-title {
   @apply text-2xl text-center underline italic font-bold mt-1 mb-4;
 }
 
+/* Dark mode for header, footer, and content */
 .dark-header {
-  @apply top-0 w-full shadow-md text-black dark:text-white dark:bg-slate-800;
+  @apply w-full shadow-md text-black dark:text-white dark:bg-gray-800;
 }
 
 .dark-footer {
-  @apply mb-0 dark:mb-0 w-full shadow-md text-black dark:text-white dark:bg-slate-800;
+  @apply w-full shadow-md text-black dark:text-white dark:bg-gray-800;
 }
 
 .dark-main-content {
-  @apply bg-gradient-to-r from-gray-100 to-slate-300 bg-opacity-90 text-black;
-  @apply dark:bg-gradient-to-r dark:from-cyan-600 dark:to-slate-900 dark:text-white;
+  @apply bg-gray-100 dark:bg-gray-900 text-black dark:text-white;
 }
 
+/* Animation keyframes for rotating logo */
 @keyframes spin {
   from {
     transform: rotate(0deg);
@@ -33,10 +71,12 @@
   }
 }
 
+/* Rotating logo animation */
 .rotating-logo {
   animation: spin 10s linear infinite;
 }
 
+/* Keyframes for scrolling animation */
 @keyframes scroll {
   0% {
     transform: translateX(0);
@@ -46,8 +86,9 @@
   }
 }
 
+/* Scroll animation class */
 .animate-scroll {
   display: flex;
-  animation: scroll 20s linear infinite;
-  width: calc(200%); /* Double the width for seamless looping */
+  animation: scroll 4s linear infinite;
+  width: 200%;
 }
