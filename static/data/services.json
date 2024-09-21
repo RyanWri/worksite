@@ -1,0 +1,28 @@
+[
+    {
+      "title": "Cloud Infrastructure",
+      "description": "Leverage cloud services for scalable infrastructure and optimized performance.",
+      "icon": "mdi:cloud-outline"
+    },
+    {
+      "title": "AI & Data Solutions",
+      "description": "Implement AI and data solutions to enhance decision-making and efficiency.",
+      "icon": "mdi:robot-outline"
+    },
+    {
+      "title": "DevOps Automation",
+      "description": "Streamline your operations with automation and modern DevOps practices.",
+      "icon": "mdi:cog-sync-outline"
+    },
+    {
+      "title": "Security Solutions",
+      "description": "Protect your business with top-notch security measures and risk management.",
+      "icon": "mdi:shield-outline"
+    },
+    {
+      "title": "Consulting & Strategy",
+      "description": "Our experts help define, strategize, and implement the best tech solutions for your business.",
+      "icon": "mdi:account-tie-outline"
+    }
+  ]
+  
