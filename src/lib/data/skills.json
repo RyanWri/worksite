@@ -14,7 +14,8 @@
       "skill-icons:cpp",
       "skill-icons:java-dark",
       "skill-icons:javascript",
-      "devicon:go"
+      "devicon:go",
+      "skill-icons:rust"
     ]
   },
   {
@@ -40,8 +41,8 @@
   {
     "category": "big data",
     "technologies": [
-      "devicon:apachespark-wordmark",
-      "devicon:apachekafka-wordmark",
+      "devicon:apachespark",
+      "simple-icons:apachekafka",
       "devicon:apacheairflow",
       "devicon:hadoop"
     ]
@@ -50,12 +51,13 @@
     "category": "infrastructure",
     "technologies": [
       "devicon:linux",
-      "devicon:docker-wordmark",
+      "simple-icons:docker",
       "skill-icons:kubernetes",
-      "devicon:git-wordmark",
+      "simple-icons:git",
+      "skill-icons:github-light",
       "devicon:gitlab-wordmark",
-      "devicon:argocd-wordmark",
-      "devicon:terraform-wordmark"
+      "devicon:argocd",
+      "skill-icons:terraform-light"
     ]
   },
   {
@@ -73,7 +75,7 @@
       "devicon:grafana-wordmark",
       "logos:datadog",
       "skill-icons:prometheus",
-      "logos:splunk"
+      "simple-icons:splunk"
     ]
   }
 ]

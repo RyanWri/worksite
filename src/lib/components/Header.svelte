@@ -68,7 +68,9 @@
             <a class="text-gray-800 dark:text-white" href="/education"
                 >Education</a
             >
-            <a class="text-gray-800 dark:text-white" href="/skills">Skills</a>
+            <a class="text-gray-800 dark:text-white" href="/technologies"
+                >Technologies</a
+            >
             <a class="text-gray-800 dark:text-white" href="/hobbies">Hobbies</a>
             <a class="text-gray-800 dark:text-white" href="/about">About Us</a>
             <a class="text-gray-800 dark:text-white" href="/services"
