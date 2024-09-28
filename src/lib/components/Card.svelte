@@ -4,10 +4,10 @@
   export let description;
 </script>
 
-<div class="max-w-sm rounded overflow-hidden shadow-lg">
-  <img class="w-full h-1/2" src={image} alt={title} />
-  <div class="px-6 py-4">
-    <div class="font-bold text-xl mb-2">{title}</div>
-    <p class="text-md text-base">{description}</p>
+<div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+  <img src={image} alt={title} class="w-full h-40 object-cover" />
+  <div class="p-4">
+    <h2 class="text-xl font-semibold text-gray-800 dark:text-white">{title}</h2>
+    <p class="text-gray-600 dark:text-gray-400 mt-2">{description}</p>
   </div>
 </div>

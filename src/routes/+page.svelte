@@ -1,60 +1,29 @@
 <script>
   import Card from "$lib/components/Card.svelte";
-  import { onMount } from "svelte";
-
-  let data = {};
-  let cards = [];
-  let aboutMeText = "";
-  let words = [];
-  let currentWordIndex = 0;
-  let cardsToShow = 0;
-
-  onMount(async () => {
-    // Fetch data for cards
-    const response = await fetch("/data/new_home.json");
-    if (response.ok) {
-      data = await response.json();
-
-      // set variables
-      cards = data.cards;
-      aboutMeText = data.intro;
-
-      // Show animations
-      words = aboutMeText.split(" ");
-      const aboutMeInterval = setInterval(() => {
-        if (currentWordIndex < words.length) {
-          currentWordIndex++;
-        } else {
-          clearInterval(aboutMeInterval);
-
-          // Start showing the cards one by one after the about me section is done
-          const cardsInterval = setInterval(() => {
-            if (cardsToShow < cards.length) {
-              cardsToShow++;
-            } else {
-              clearInterval(cardsInterval);
-            }
-          }, 600);
-        }
-      }, 4000 / words.length);
-    } else {
-      console.error("Failed to fetch data");
-    }
-  });
+  export let data;
+  export let cards = data.cards;
+  export let aboutMeText = data.aboutMeText;
 </script>
+
+<svelte:head>
+  <title>The Wright Way - Tech Solutions</title>
+  <meta
+    name="description"
+    content="Explore our range of services in cloud infrastructure, AI solutions, and more."
+  />
+  <meta name="keywords" content="cloud, AI, consulting, services, devops" />
+</svelte:head>
 
 <div class="container mx-auto p-4">
   <!-- About Me Section -->
-  <div class="about-me">
-    {#each words.slice(0, currentWordIndex) as word}
-      <span class="text-2xl">{word} </span>
-    {/each}
+  <div class="text-xl mb-8 mt-4">
+    <span class="text-xl">{aboutMeText}</span>
   </div>
 
   {#if cards}
     <!-- Cards Grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-      {#each cards.slice(0, cardsToShow) as card}
+      {#each cards as card}
         <Card
           image={card.image}
           title={card.title}
@@ -64,11 +33,3 @@
     </div>
   {/if}
 </div>
-
-<style>
-  .about-me {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
-    margin-top: 1rem;
-  }
-</style>
