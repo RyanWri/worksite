@@ -1,15 +1,12 @@
 /** @type {import('./$types').PageLoad} */
-
 export const load = async () => {
-  // Fetch data from the JSON file
-  const data = await (await import("$lib/data/home-page-data.json")).default;
-
-  if (!data) {
-    throw error(404, "Data not found!");
-  }
+  const servicesData = await (await import("$lib/data/services.json")).default;
+  const trainingData = await (await import("$lib/data/training.json")).default;
+  const educationData = await (await import("$lib/data/education.json")).default;
 
   return {
-    cards: data.cards,
-    aboutMeText: data.intro,
+    services: servicesData,
+    training: trainingData,
+    education: educationData
   };
 };

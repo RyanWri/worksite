@@ -1,0 +1,23 @@
+[
+      {
+        "title": "Data Engineering Bootcamp",
+        "description": "Master the core concepts of data engineering, including ETL processes, data lakes, and modern big data tools.",
+        "icon": "mdi:database"
+      },
+      {
+        "title": "DevOps Masterclass",
+        "description": "Learn how to automate your development workflow with DevOps, leveraging CI/CD pipelines, Kubernetes, Docker, and Terraform.",
+        "icon": "mdi:docker"
+      },
+      {
+        "title": "Design Patterns Workshop",
+        "description": "Understand and implement common design patterns to create more efficient, maintainable, and scalable software architectures.",
+        "icon": "mdi:shape-outline"
+      },
+      {
+        "title": "Legacy Code Refactoring",
+        "description": "Improve your legacy code by applying best practices for refactoring, optimizing, and bringing it up to modern standards.",
+        "icon": "mdi:code-braces-box"
+      }
+    ]
+  

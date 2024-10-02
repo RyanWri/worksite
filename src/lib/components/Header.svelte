@@ -62,21 +62,11 @@
         <div
             class={`flex-col mt-8 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0 ${showMenu ? "flex" : "hidden"}`}
         >
-            <a class="text-gray-800 dark:text-white" href="/experience"
-                >Work Experience</a
-            >
-            <a class="text-gray-800 dark:text-white" href="/education"
-                >Education</a
-            >
             <a class="text-gray-800 dark:text-white" href="/technologies"
                 >Technologies</a
             >
             <a class="text-gray-800 dark:text-white" href="/hobbies">Hobbies</a>
             <a class="text-gray-800 dark:text-white" href="/about">About Us</a>
-            <a class="text-gray-800 dark:text-white" href="/services"
-                >Services</a
-            >
-            <!-- Added Services Link -->
         </div>
 
         <!-- Dark Mode and Other Icons for Large Screens -->
