@@ -1,74 +1,99 @@
 <script>
-  import Card from "$lib/components/Card.svelte";
-  import { onMount } from "svelte";
-
-  let data = {};
-  let cards = [];
-  let aboutMeText = "";
-  let words = [];
-  let currentWordIndex = 0;
-  let cardsToShow = 0;
-
-  onMount(async () => {
-    // Fetch data for cards
-    const response = await fetch("/data/new_home.json");
-    if (response.ok) {
-      data = await response.json();
-
-      // set variables
-      cards = data.cards;
-      aboutMeText = data.intro;
-
-      // Show animations
-      words = aboutMeText.split(" ");
-      const aboutMeInterval = setInterval(() => {
-        if (currentWordIndex < words.length) {
-          currentWordIndex++;
-        } else {
-          clearInterval(aboutMeInterval);
-
-          // Start showing the cards one by one after the about me section is done
-          const cardsInterval = setInterval(() => {
-            if (cardsToShow < cards.length) {
-              cardsToShow++;
-            } else {
-              clearInterval(cardsInterval);
-            }
-          }, 600);
-        }
-      }, 4000 / words.length);
-    } else {
-      console.error("Failed to fetch data");
-    }
-  });
+  export let data;
+  export let services = data.services;
+  export let training = data.training;
+  export let education = data.education;
+  import Icon from "@iconify/svelte";
 </script>
 
-<div class="container mx-auto p-4">
-  <!-- About Me Section -->
-  <div class="about-me">
-    {#each words.slice(0, currentWordIndex) as word}
-      <span class="text-2xl">{word} </span>
+<!-- Services Section -->
+<section class="container mx-auto p-8">
+  <h1 class="text-4xl font-bold text-center mb-12">Our Services</h1>
+  <p class="text-xl text-center text-gray-700 dark:text-gray-300 mb-8">
+    Unlock the full potential of your business with innovative, scalable
+    solutions. From data engineering to AI and cloud architecture, we deliver
+    expertise that drives success. Explore our services and discover how we can
+    help you lead in the digital age.
+  </p>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    {#each services as service}
+      <div
+        class="flex flex-col items-center bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md transition transform hover:scale-105"
+      >
+        <Icon
+          icon={service.icon}
+          class="h-16 w-16 mb-4 text-gray-700 dark:text-white"
+        />
+        <h2 class="text-2xl font-bold dark:text-white">{service.title}</h2>
+        <p class="text-gray-600 dark:text-gray-400 mt-2 text-center">
+          {service.description}
+        </p>
+      </div>
     {/each}
   </div>
+</section>
 
-  {#if cards}
-    <!-- Cards Grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-      {#each cards.slice(0, cardsToShow) as card}
-        <Card
-          image={card.image}
-          title={card.title}
-          description={card.description}
+<!-- Divider -->
+<hr class="my-12 border-gray-300 dark:border-gray-600" />
+
+<!-- Training Section -->
+<section class="container mx-auto p-8">
+  <h1 class="text-4xl font-bold text-center mb-12">Training</h1>
+  <p class="text-xl text-center text-gray-700 dark:text-gray-300 mb-8">
+    Upskill your team with hands-on training that empowers your employees with
+    the latest technologies and methodologies. Whether it's data engineering,
+    DevOps, or software design patterns, our expert-led training sessions are
+    designed to foster growth and innovation.
+  </p>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    {#each training as course}
+      <div
+        class="flex flex-col items-center bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md transition transform hover:scale-105"
+      >
+        <Icon
+          icon={course.icon}
+          class="h-16 w-16 mb-4 text-gray-700 dark:text-white"
         />
-      {/each}
-    </div>
-  {/if}
-</div>
+        <h2 class="text-2xl font-bold text-center dark:text-white">
+          {course.title}
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mt-2 text-center">
+          {course.description}
+        </p>
+      </div>
+    {/each}
+  </div>
+</section>
 
-<style>
-  .about-me {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
-    margin-top: 1rem;
-  }
-</style>
+<!-- Divider -->
+<hr class="my-12 border-gray-300 dark:border-gray-600" />
+
+<!-- Education Section -->
+<section class="container mx-auto p-8">
+  <h1 class="text-4xl font-bold text-center mb-12">Education</h1>
+  <p class="text-xl text-center text-gray-700 dark:text-gray-300 mb-8">
+    Stay ahead of the curve with our educational programs, designed to keep you
+    at the forefront of the tech industry. From foundational software principles
+    to advanced data modeling and CI/CD best practices, our courses ensure you
+    have the knowledge to thrive.
+  </p>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    {#each education as edu}
+      <div
+        class="flex flex-col items-center bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md transition transform hover:scale-105"
+      >
+        <Icon
+          icon={edu.icon}
+          class="h-16 w-16 mb-4 text-gray-700 dark:text-white"
+        />
+        <h2 class="text-2xl font-bold dark:text-white">{edu.title}</h2>
+        <p class="text-gray-600 dark:text-gray-400 mt-2 text-center">
+          {edu.description}
+        </p>
+      </div>
+    {/each}
+  </div>
+</section>

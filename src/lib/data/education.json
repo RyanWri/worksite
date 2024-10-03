@@ -1,0 +1,27 @@
+[
+      {
+        "title": "Software Design Principles",
+        "description": "Learn the fundamental principles that guide the development of clean, maintainable, and scalable software systems.",
+        "icon": "mdi:teach"
+      },
+      {
+        "title": "Data Modeling Techniques",
+        "description": "Understand the various data modeling techniques used to organize, structure, and query large datasets efficiently.",
+        "icon": "mdi:chart-areaspline"
+      },
+      {
+        "title": "CI/CD Best Practices",
+        "description": "Master the continuous integration and delivery pipelines that automate and streamline your development process.",
+        "icon": "mdi:cloud-sync"
+      },
+      {
+        "title": "Cloud Architecture",
+        "description": "Explore cloud architecture and learn how to design and deploy secure, scalable cloud infrastructure solutions.",
+        "icon": "mdi:cloud-outline"
+      },
+      {
+        "title": "Microservices Architecture",
+        "description": "Learn how to design and build resilient, loosely coupled systems using the microservices architecture pattern.",
+        "icon": "mdi:cube-outline"
+      }
+    ]
