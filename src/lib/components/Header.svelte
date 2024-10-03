@@ -65,7 +65,6 @@
             <a class="text-gray-800 dark:text-white" href="/technologies"
                 >Technologies</a
             >
-            <a class="text-gray-800 dark:text-white" href="/hobbies">Hobbies</a>
             <a class="text-gray-800 dark:text-white" href="/about">About Us</a>
         </div>
 
