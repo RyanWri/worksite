@@ -65,7 +65,8 @@
             <a class="text-gray-800 dark:text-white" href="/technologies"
                 >Technologies</a
             >
-            <a class="text-gray-800 dark:text-white" href="/about">About Us</a>
+            <a class="text-gray-800 dark:text-white" href="/about">About</a>
+            <a class="text-gray-800 dark:text-white" href="/contact">Contact</a>
         </div>
 
         <!-- Dark Mode and Other Icons for Large Screens -->
