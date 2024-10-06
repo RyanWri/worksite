@@ -1,0 +1,18 @@
+{
+    "logos": [
+      "/images/akamai_logo.webp",
+      "/images/cloudyo_logo.webp",
+      "/images/rakuten_viber_logo.webp",
+      "/images/risecodes_logo_webp.webp",
+      "/images/primrose.webp"
+    ],
+    "team": [
+      {
+        "name": "Ryan Wright",
+        "position": "CEO",
+        "description": "Ryan leads the company with over 10 years of experience in tech and business.",
+        "avatar": "/images/me.webp"
+      }
+    ]
+  }
+  
