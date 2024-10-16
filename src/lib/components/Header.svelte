@@ -29,16 +29,15 @@
                 class="flex text-xl font-bold text-gray-800 dark:text-white md:text-2xl"
                 href="/"
             >
-                <img
-                    src={isDarkMode
-                        ? "/images/brand_logo_white.svg"
-                        : "/images/brand_logo.svg"}
+                <Icon
+                    icon={isDarkMode
+                        ? "iconoir:database-check"
+                        : "iconoir:database-check-solid"}
                     class="h-8 mr-3"
-                    alt="The Wright Way"
                 />
                 <span
                     class="self-center text-xl font-semibold whitespace-nowrap"
-                    >The Wright Way</span
+                    >DataZen.Dev</span
                 >
             </a>
             <!-- Mobile Menu and Dark Mode Toggle -->
