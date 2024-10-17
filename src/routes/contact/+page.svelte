@@ -20,7 +20,7 @@
 </script>
 
 <svelte:head>
-    <title>Contact Us - The Wright Way</title>
+    <title>Contact Us - DataZenDev</title>
     <meta
         name="description"
         content="Get in touch with us for your technology, training, and consulting needs."
@@ -45,7 +45,7 @@
                 <div class="flex items-center justify-center lg:justify-start">
                     <Icon icon="mdi:email" class="w-6 h-6 mr-2 text-blue-600" />
                     <span class="text-gray-700 dark:text-gray-300"
-                        >contact@thewrightway.com</span
+                        >contact@datazen.dev</span
                     >
                 </div>
                 <div class="flex items-center justify-center lg:justify-start">
