@@ -6,8 +6,8 @@
     <hr class="my-4 border-gray-200 sm:mx-auto dark:border-gray-700" />
     <div class="container mx-auto sm:flex sm:items-center sm:justify-between">
         <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-            © 2023 <a href="/" class="hover:underline">The Wright Way™</a>.
-            All Rights Reserved.
+            © 2023 <a href="/" class="hover:underline">DataZen.Dev™</a>. All
+            Rights Reserved.
         </span>
         <!-- Social Icons -->
         <div class="flex mt-4 space-x-5 justify-center sm:mt-0">
