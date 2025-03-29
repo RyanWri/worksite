@@ -1,18 +1,24 @@
 {
-    "logos": [
-      "/images/akamai_logo.webp",
-      "/images/cloudyo_logo.webp",
-      "/images/rakuten_viber_logo.webp",
-      "/images/risecodes_logo_webp.webp",
-      "/images/primrose.webp"
-    ],
-    "team": [
-      {
-        "name": "Ryan Wright",
-        "position": "CEO",
-        "description": "Ryan leads the company with over 10 years of experience in tech and business.",
-        "avatar": "/images/me.webp"
-      }
-    ]
-  }
-  
+  "title": "About Me",
+  "name": "Ran Wright",
+  "profession": "Senior Machine Learning Engineer",
+  "description": "I specialize in AIOps, MLOps, and architecting scalable AI and data platforms. Passionate about transforming complex challenges into innovative solutions.",
+  "expertise": [
+    "AIOps & MLOps – Implementing operational strategies to enhance AI workflows.",
+    "Data Platform Architecture – Designing robust data infrastructures for efficient processing.",
+    "Low Latency Systems – Ensuring minimal latency and high throughput in real-time data."
+  ],
+  "projects": [
+    {
+      "title": "LLM Logic Lab",
+      "description": "Explored logical reasoning capabilities of LLMs, developing a Python-based framework to assess various models.",
+      "link": "https://www.linkedin.com/posts/ran-wright46_llm-airesearch-machinelearning-activity-7299307005310124032-Yoxy?utm_source=chatgpt.com"
+    },
+    {
+      "title": "Scaling API Requests",
+      "description": "Analyzed and implemented caching strategies for 1.2 billion daily API requests, achieving low latency & high throughput.",
+      "link": "https://www.linkedin.com/posts/ran-wright46_scaling-to-12-billion-daily-api-requests-activity-7209127710755868672-qrC0?utm_source=chatgpt.com"
+    }
+  ],
+  "philosophy": "My approach centers on transparency, collaboration, and excellence. I strive to bridge the gap between complex data systems and actionable business insights."
+}

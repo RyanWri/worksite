@@ -1,12 +1,17 @@
-/** @type {import('./$types').PageLoad} */
-export const load = async () => {
-  const servicesData = await (await import("$lib/data/services.json")).default;
-  const trainingData = await (await import("$lib/data/training.json")).default;
-  const educationData = await (await import("$lib/data/education.json")).default;
-
-  return {
-    services: servicesData,
-    training: trainingData,
-    education: educationData
-  };
-};
+export async function load({ fetch }) {
+  // Call your API endpoint to fetch data
+  const response = await fetch('/api/services');
+  if (!response.ok) {
+    console.error('Failed to fetch services:', response.status);
+    return { services: [] }; // Return an empty array if fetch fails
+  }
+  if (response.ok) {
+    const services = await response.json() 
+    return { services };
+  }
+  else {
+    return {
+      services: []
+    };
+  }
+}
