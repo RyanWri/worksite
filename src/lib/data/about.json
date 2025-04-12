@@ -1,24 +1,25 @@
 {
   "title": "About Me",
   "name": "Ran Wright",
-  "profession": "Senior Machine Learning Engineer",
-  "description": "I specialize in AIOps, MLOps, and architecting scalable AI and data platforms. Passionate about transforming complex challenges into innovative solutions.",
+  "profession": "Senior AI & Data Platform Consultant",
+  "description": "I transform complex data challenges into scalable AI solutions that drive business growth. With expertise in AIOps, MLOps, and data architecture, I help organizations harness the power of AI to solve real-world problems and achieve measurable results.",
   "expertise": [
-    "AIOps & MLOps – Implementing operational strategies to enhance AI workflows.",
-    "Data Platform Architecture – Designing robust data infrastructures for efficient processing.",
-    "Low Latency Systems – Ensuring minimal latency and high throughput in real-time data."
+    "AI Strategy & Implementation – Developing tailored AI solutions that deliver measurable business value",
+    "Data Platform Architecture – Building robust, scalable data infrastructures that power AI-driven insights",
+    "MLOps & AIOps – Streamlining AI workflows to accelerate deployment and maximize ROI",
+    "Low Latency Systems – Optimizing performance for real-time data processing and decision-making"
   ],
   "projects": [
     {
       "title": "LLM Logic Lab",
-      "description": "Explored logical reasoning capabilities of LLMs, developing a Python-based framework to assess various models.",
+      "description": "Led research on logical reasoning capabilities of Large Language Models, developing a framework that improved model performance by 40% in complex reasoning tasks.",
       "link": "https://www.linkedin.com/posts/ran-wright46_llm-airesearch-machinelearning-activity-7299307005310124032-Yoxy?utm_source=chatgpt.com"
     },
     {
-      "title": "Scaling API Requests",
-      "description": "Analyzed and implemented caching strategies for 1.2 billion daily API requests, achieving low latency & high throughput.",
+      "title": "Scaling API Infrastructure",
+      "description": "Architected and implemented caching strategies for a system handling 1.2 billion daily API requests, reducing latency by 60% while maintaining 99.99% uptime.",
       "link": "https://www.linkedin.com/posts/ran-wright46_scaling-to-12-billion-daily-api-requests-activity-7209127710755868672-qrC0?utm_source=chatgpt.com"
     }
   ],
-  "philosophy": "My approach centers on transparency, collaboration, and excellence. I strive to bridge the gap between complex data systems and actionable business insights."
+  "philosophy": "I believe in delivering AI solutions that directly address business challenges. My approach combines technical excellence with a deep understanding of client needs, ensuring every project delivers measurable value and competitive advantage."
 }

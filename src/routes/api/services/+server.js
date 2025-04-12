@@ -9,7 +9,7 @@ export async function GET() {
     }
     return json(services);
   } catch (error) {
-    console.error('Error loading services:', error);
+    // Return a proper error response without logging to console
     return json({ error: 'Failed to load data' }, { status: 500 });
   }
 }

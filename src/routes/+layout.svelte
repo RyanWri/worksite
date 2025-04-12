@@ -1,11 +1,15 @@
 <script>
   import Header from "$lib/components/Header.svelte";
-  import "../app.css";
   import Footer from "$lib/components/Footer.svelte";
+  import "../app.css";
 </script>
 
-<Header />
-<main class="min-h-screen pt-4">
-  <slot />
-</main>
-<Footer />
+<div
+  class="flex flex-col min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
+>
+  <Header />
+  <main class="flex-grow">
+    <slot />
+  </main>
+  <Footer />
+</div>

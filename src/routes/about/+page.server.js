@@ -3,8 +3,8 @@ export async function load({ fetch }) {
   const response = await fetch('/api/about');
   const about = {}
   if (!response.ok) {
-    console.error('Failed to fetch services:', response.status);
-    return { about }; // Return an empty array if fetch fails
+    // Return an empty object if fetch fails
+    return { about }; 
   }
   if (response.ok) {
     const about = await response.json() 

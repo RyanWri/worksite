@@ -8,6 +8,11 @@
   html {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   }
+  
+  body {
+    @apply min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white;
+  }
+  
   h1 {
     @apply text-6xl font-bold;
   }
@@ -85,4 +90,46 @@ body {
   display: flex;
   width: calc(200%); /* Double the width for seamless looping */
   animation: scroll 15s linear infinite;
+}
+
+@layer components {
+  .container {
+    @apply px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl;
+  }
+  
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium transition-colors duration-200;
+  }
+  
+  .btn-primary {
+    @apply bg-blue-600 hover:bg-blue-700 text-white;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-200 hover:bg-gray-300 text-gray-900 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-white;
+  }
+  
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6;
+  }
+  
+  .heading-1 {
+    @apply text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white;
+  }
+  
+  .heading-2 {
+    @apply text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white;
+  }
+  
+  .heading-3 {
+    @apply text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white;
+  }
+  
+  .text-body {
+    @apply text-gray-700 dark:text-gray-300;
+  }
+  
+  .text-muted {
+    @apply text-gray-500 dark:text-gray-400;
+  }
 }

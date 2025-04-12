@@ -8,14 +8,8 @@
     let interest = "service"; // Default value for the dropdown
 
     function handleSubmit() {
-        console.log({
-            name,
-            email,
-            company,
-            message,
-            interest, // Log the interest as well
-        });
-        alert("Form submitted successfully! Check the console for details.");
+        // Form submission logic without console logging
+        alert("Form submitted successfully!");
     }
 </script>
 
