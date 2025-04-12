@@ -1,15 +1,18 @@
-/** @type {import('./$types').PageLoad} */
-
-export const load = async () => {
-    const data = await (await import("$lib/data/about.json")).default;
-  
-    if (!data) {
-      throw error(404, "Data not found!");
-    }
-  
+export async function load({ fetch }) {
+  // Call your API endpoint to fetch data
+  const response = await fetch('/api/about');
+  const about = {}
+  if (!response.ok) {
+    // Return an empty object if fetch fails
+    return { about }; 
+  }
+  if (response.ok) {
+    const about = await response.json() 
+    return { about };
+  }
+  else {
     return {
-      logos: data.logos,
-      team: data.team
+      about
     };
-  };
-  
+  }
+}
