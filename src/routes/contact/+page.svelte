@@ -14,7 +14,7 @@
 </script>
 
 <svelte:head>
-    <title>Contact Us - DataZenDev</title>
+    <title>Contact Us - Ran Wright</title>
     <meta
         name="description"
         content="Get in touch with us for your technology, training, and consulting needs."

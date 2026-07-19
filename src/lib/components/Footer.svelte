@@ -1,5 +1,7 @@
 <script>
     import Icon from "@iconify/svelte";
+
+    const year = new Date().getFullYear();
 </script>
 
 <footer class="bg-white dark:bg-gray-800 py-6">
@@ -11,7 +13,7 @@
             <span
                 class="text-sm text-gray-500 dark:text-gray-400 text-center sm:text-left"
             >
-                © 2023 <a href="/" class="hover:underline">DataZen.Dev™</a>.
+                © {year} <a href="/" class="hover:underline">Ran Wright</a>.
                 All Rights Reserved.
             </span>
 
