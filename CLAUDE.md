@@ -15,40 +15,6 @@ This is a **SvelteKit portfolio/business website** deployed on Vercel. It's a mo
 - **Animation**: Neoconfetti for confetti effects
 - **Database**: Vercel KV for caching/data storage
 
-## Project Structure
-
-```
-src/
-├── routes/                 # SvelteKit file-based routing (becomes URL paths)
-│   ├── +page.svelte       # Home page
-│   ├── +layout.svelte     # Root layout (shared across all pages)
-│   ├── +page.server.js    # Data loading for home page
-│   ├── about/             # /about route
-│   ├── contact/           # /contact route
-│   ├── projects/          # /projects route
-│   ├── technologies/      # /technologies route
-│   └── api/               # API endpoints
-│       ├── about/
-│       └── services/
-├── lib/
-│   ├── components/        # Reusable Svelte components
-│   │   ├── Header.svelte
-│   │   ├── Footer.svelte
-│   │   ├── Card.svelte
-│   │   ├── ProjectCard.svelte
-│   │   ├── SkillsIconGrid.svelte
-│   │   ├── ClientsBar.svelte
-│   │   └── Project.svelte
-│   └── data/              # Static JSON data files
-│       ├── services.json
-│       ├── projects.json
-│       ├── skills.json
-│       ├── about.json
-│       ├── education.json
-│       └── training.json
-└── app.html              # Root HTML template
-```
-
 ## Data Architecture
 
 The site uses a **JSON-based static data model** with an API layer:
@@ -96,9 +62,8 @@ npm run check:watch    # Type-check in watch mode (auto-rerun on changes)
 Shared Svelte components live in `src/lib/components/`. Components receive props for configuration and render reactively. Notable components:
 - `Header.svelte` - Navigation and branding
 - `Footer.svelte` - Footer links and info
-- `ProjectCard.svelte` - Individual project display
 - `SkillsIconGrid.svelte` - Skills visualization
-- `ClientsBar.svelte` - Client logos/info
+- `Project.svelte` - Individual project display
 
 ## Important Patterns
 
@@ -140,5 +105,3 @@ This is a solo portfolio site meant to load fast and stay easy to maintain. Thre
 1. **Minimize footprint** — no new npm dependency without asking first; every package is bytes shipped to visitors. Prefer existing Tailwind utilities over new custom CSS in `app.css`.
 2. **Readability** — clear naming and structure over clever abstractions. This codebase is small; keep it easy to scan.
 3. **Clean and minimal, don't break things** — delete dead code rather than commenting it out. Verify `npm run build` still succeeds after structural changes.
-
-Known cleanup deferred to a future PR (not now): `ProjectCard.svelte` and `ClientsBar.svelte` are currently unused, and a few images under `static/images/` (`svelte-welcome.png/.webp`) aren't referenced anywhere.
