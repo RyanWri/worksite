@@ -24,7 +24,13 @@ The site uses a **JSON-based static data model** with an API layer:
 3. **Data Loading**: Page `.server.js` files use `fetch()` to call API endpoints and load data server-side
 4. **Usage**: Data is passed to pages via the `load()` function return value
 
-**Example flow**: `src/lib/data/services.json` → `src/routes/api/services/+server.js` → `src/routes/+page.server.js` fetches it → `src/routes/+page.svelte` uses `data.services`
+**Example flow**: `src/lib/data/services.json` → `src/routes/api/services/+server.js` → `src/routes/services/+page.server.js` fetches it → `src/routes/services/+page.svelte` uses `data.services`
+
+## Routes
+
+- `/` — personal homepage (hero, clients, featured work, contact CTA). Data: `about.json` + `projects.json` (via `/api/about`, `/api/projects`).
+- `/services` — service offerings grid (formerly the homepage). Data: `services.json`.
+- `/about`, `/projects`, `/technologies`, `/contact` — as named.
 
 ## Common Commands
 
@@ -105,3 +111,9 @@ This is a solo portfolio site meant to load fast and stay easy to maintain. Thre
 1. **Minimize footprint** — no new npm dependency without asking first; every package is bytes shipped to visitors. Prefer existing Tailwind utilities over new custom CSS in `app.css`.
 2. **Readability** — clear naming and structure over clever abstractions. This codebase is small; keep it easy to scan.
 3. **Clean and minimal, don't break things** — delete dead code rather than commenting it out. Verify `npm run build` still succeeds after structural changes.
+
+## Brand
+
+This is a **personal** portfolio for Ran Wright — there is no separate company/agency brand. Do not introduce a business name, logo, or domain distinct from the personal identity (no "DataZen" or similar). Copy should read in first person ("I help...", not "Our experts..."). Assets: `static/images/me.webp` (headshot), `static/images/brand_logo.svg` / `brand_logo_white.svg` (personal mark, light/dark variants).
+
+The site's purpose is lead generation and building professional authority: every page should reinforce one coherent story (who Ran is, proof of work, how to get in touch), not read as a stitched-together set of independent templates. When adding content, prefer real, verifiable material (actual projects, actual links) over placeholder text — placeholder content that ships to production (e.g. "Purpose A", fake contact info) actively undermines the site's purpose.

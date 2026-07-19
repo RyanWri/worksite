@@ -29,15 +29,16 @@
             <a
                 class="flex items-center text-lg font-bold text-gray-800 dark:text-white sm:text-xl md:text-2xl"
                 href="/"
-                aria-label="DataZen.Dev Home"
+                aria-label="Ran Wright Home"
             >
-                <Icon
-                    icon={isDarkMode
-                        ? "iconoir:database-check"
-                        : "iconoir:database-check-solid"}
-                    class="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 mr-2 sm:mr-3"
+                <img
+                    src={isDarkMode
+                        ? "/images/brand_logo_white.svg"
+                        : "/images/brand_logo.svg"}
+                    alt=""
+                    class="h-6 w-auto sm:h-7 md:h-8 mr-2 sm:mr-3"
                 />
-                <span class="whitespace-nowrap">DataZen.Dev</span>
+                <span class="whitespace-nowrap">Ran Wright</span>
             </a>
 
             <!-- Mobile Menu and Dark Mode Toggle -->
@@ -72,6 +73,12 @@
                 showMenu ? "flex" : "hidden"
             } flex-col mt-4 space-y-3 md:flex md:flex-row md:items-center md:space-y-0 md:space-x-6 md:mt-0 md:ml-auto`}
         >
+            <a
+                class="text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 py-2 md:py-0"
+                href="/services"
+            >
+                Services
+            </a>
             <a
                 class="text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 py-2 md:py-0"
                 href="/technologies"
