@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "respectGitignore": true,
+  "cleanupPeriodDays": 30,
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(npm *)",
+      "Bash(npm run dev)",
+      "Bash(npm run build)",
+      "Bash(npm run check)",
+      "Bash(git *)",
+      "Bash(npx *)",
+      "Read",
+      "Edit",
+      "Write"
+    ]
+  },
+  "model": "claude-opus-4-8",
+  "enableAllProjectMcpServers": true,
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.file_path // .tool_response.filePath' | xargs -I {} sh -c 'case \"{}\" in *.svelte|*.ts|*.tsx|*.js|*.jsx|*.json|*.cjs) npx prettier --write \"{}\" >/dev/null 2>&1 ;; esac; true'",
+            "timeout": 10,
+            "statusMessage": "Formatting with Prettier..."
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "SessionStart",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"systemMessage\": \"🚀 SvelteKit + Tailwind + Vercel setup ready. Type \\'npm run dev\\' to start, or ask about Svelte components, Tailwind styling, or deployment.\"}'",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  },
+  "enabledPlugins": {
+    "svelte-skills@svelte-skills-kit": true,
+    "frontend-design@claude-plugins-official": true
+  },
+  "spinnerTipsEnabled": true,
+  "syntaxHighlightingDisabled": false,
+  "effortLevel": "high"
+}
