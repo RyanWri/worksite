@@ -17,20 +17,19 @@ This is a **SvelteKit portfolio/business website** deployed on Vercel. It's a mo
 
 ## Data Architecture
 
-The site uses a **JSON-based static data model** with an API layer:
+The site uses a **JSON-based static data model**:
 
 1. **Data Source**: JSON files in `src/lib/data/`
-2. **API Endpoints**: `src/routes/api/*/+server.js` files that import and serve JSON data as REST endpoints
-3. **Data Loading**: Page `.server.js` files use `fetch()` to call API endpoints and load data server-side
-4. **Usage**: Data is passed to pages via the `load()` function return value
+2. **Data Loading**: A page `.server.js` file imports the JSON directly and returns it from `load()`
+3. **Usage**: Data is passed to the page via the `load()` function return value
 
-**Example flow**: `src/lib/data/services.json` → `src/routes/api/services/+server.js` → `src/routes/services/+page.server.js` fetches it → `src/routes/services/+page.svelte` uses `data.services`
+**Example flow**: `src/lib/data/about.json` → `src/routes/+page.server.js` imports it → `src/routes/+page.svelte` uses `data.about`
+
+The site is currently being reduced to a single homepage (see issue #31). It has been trimmed to just `/`; other routes and the former `src/routes/api/*` endpoint layer were removed to shrink the bundle. Re-introduce pages only as the site is rebuilt toward its lead-generation mission.
 
 ## Routes
 
-- `/` — personal homepage (hero, clients, featured work, contact CTA). Data: `about.json` + `projects.json` (via `/api/about`, `/api/projects`).
-- `/services` — service offerings grid (formerly the homepage). Data: `services.json`.
-- `/about`, `/projects`, `/technologies`, `/contact` — as named.
+- `/` — personal homepage (hero, trusted-by, featured work, follow/CTA). Data: `about.json` + `projects.json`, imported directly in `+page.server.js`. Contact CTAs are `mailto:` links.
 
 ## Common Commands
 

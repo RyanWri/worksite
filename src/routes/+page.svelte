@@ -36,17 +36,19 @@
         class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-3 sm:gap-4"
       >
         <a
-          href="/contact"
+          href="mailto:ranman37@gmail.com"
           class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-md text-base font-medium text-white bg-blue-600 hover:bg-blue-700 transition-colors"
         >
           Get in Touch
           <Icon icon="mdi:arrow-right" class="w-5 h-5 ml-2" />
         </a>
         <a
-          href="/about"
+          href="https://www.linkedin.com/in/ran-wright46/"
+          target="_blank"
+          rel="noopener noreferrer"
           class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-md text-base font-medium border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
         >
-          More About Me
+          Connect on LinkedIn
         </a>
       </div>
     </div>
@@ -170,7 +172,7 @@
     I help teams turn complex data and AI challenges into scalable, production-ready systems.
   </p>
   <a
-    href="/contact"
+    href="mailto:ranman37@gmail.com"
     class="inline-flex items-center px-6 py-3 rounded-md text-base font-medium text-white bg-blue-600 hover:bg-blue-700 transition-colors"
   >
     Let's Talk
