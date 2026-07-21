@@ -1,41 +1,36 @@
 <script>
   import { goto } from "$app/navigation";
-  import Icon from "@iconify/svelte"; // Import the Iconify component
 
-  // Function to go back to the previous page
   function goBack() {
     history.back();
   }
 
-  // Function to go to the homepage
   function goHome() {
     goto("/");
   }
 </script>
 
 <section
-  class="container mx-auto p-4 flex flex-col items-center justify-center text-center"
+  class="container flex flex-col items-center justify-center py-24 text-center"
 >
-  <!-- Forbidden Icon -->
-  <Icon icon="mdi:alert-circle-outline" class="text-red-600 w-16 h-16 mb-4" />
-
-  <h1 class="text-4xl font-bold text-red-600 mb-2">404 - Page Not Found</h1>
-  <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+  <p class="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-accent">
+    Error 404
+  </p>
+  <h1 class="mb-2 text-4xl font-bold tracking-tight">Page not found</h1>
+  <p class="mb-8 max-w-md text-lg text-muted">
     Sorry, the page you are looking for does not exist or may have been moved.
   </p>
 
-  <!-- Action buttons -->
-  <div class="flex space-x-2">
+  <div class="flex gap-3">
     <button
       on:click={goBack}
-      class="px-3 py-2 bg-gray-700 text-white rounded-md hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500"
+      class="rounded-md border border-border px-4 py-2 font-medium text-fg transition-colors hover:border-accent hover:text-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
     >
       Go Back
     </button>
-
     <button
       on:click={goHome}
-      class="px-3 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400"
+      class="rounded-md bg-accent px-4 py-2 font-medium text-white transition-colors hover:bg-accent-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
     >
       Go to Homepage
     </button>

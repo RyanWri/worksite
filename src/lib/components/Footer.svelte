@@ -2,52 +2,49 @@
     import Icon from "@iconify/svelte";
 
     const year = new Date().getFullYear();
+
+    const socials = [
+        { href: "https://github.com/RyanWri", icon: "mdi:github", label: "GitHub" },
+        {
+            href: "https://www.linkedin.com/in/ran-wright46/",
+            icon: "mdi:linkedin",
+            label: "LinkedIn",
+        },
+        {
+            href: "https://discordapp.com/users/1119880721289453639",
+            icon: "mdi:discord",
+            label: "Discord",
+        },
+        {
+            href: "https://www.facebook.com/rrwright46/",
+            icon: "mdi:facebook",
+            label: "Facebook",
+        },
+    ];
 </script>
 
-<footer class="bg-white dark:bg-gray-800 py-6">
-    <hr class="border-gray-200 dark:border-gray-700 mb-6" />
-    <div class="container px-4 sm:px-6 lg:px-8 mx-auto">
-        <div
-            class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
-        >
-            <span
-                class="text-sm text-gray-500 dark:text-gray-400 text-center sm:text-left"
-            >
-                © {year} <a href="/" class="hover:underline">Ran Wright</a>.
-                All Rights Reserved.
-            </span>
+<footer class="border-t border-border">
+    <div
+        class="container flex flex-col items-center gap-4 py-8 sm:flex-row sm:justify-between"
+    >
+        <span class="text-sm text-muted">
+            © {year}
+            <a href="/" class="transition-colors hover:text-fg">Ran Wright</a>. All
+            rights reserved.
+        </span>
 
-            <!-- Social Icons -->
-            <div class="flex justify-center space-x-5 sm:justify-end">
+        <div class="flex items-center gap-5">
+            {#each socials as { href, icon, label }}
                 <a
-                    href="https://github.com/RyanWri"
-                    class="text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors"
-                    aria-label="GitHub"
+                    {href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-muted transition-colors hover:text-accent"
+                    aria-label={label}
                 >
-                    <Icon icon="mdi:github" class="h-5 w-5" />
+                    <Icon {icon} class="h-5 w-5" />
                 </a>
-                <a
-                    href="https://discordapp.com/users/1119880721289453639"
-                    class="text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors"
-                    aria-label="Discord"
-                >
-                    <Icon icon="mdi:discord" class="h-5 w-5" />
-                </a>
-                <a
-                    href="https://www.linkedin.com/in/ran-wright46/"
-                    class="text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors"
-                    aria-label="LinkedIn"
-                >
-                    <Icon icon="mdi:linkedin" class="h-5 w-5" />
-                </a>
-                <a
-                    href="https://www.facebook.com/rrwright46/"
-                    class="text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors"
-                    aria-label="Facebook"
-                >
-                    <Icon icon="mdi:facebook" class="h-5 w-5" />
-                </a>
-            </div>
+            {/each}
         </div>
     </div>
 </footer>

@@ -3,9 +3,29 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
+
+    <!-- Set theme before paint: saved choice, else OS preference (no flash) -->
+    <script>
+      (() => {
+        const saved = localStorage.getItem("theme");
+        const dark =
+          saved === "dark" ||
+          (!saved && matchMedia("(prefers-color-scheme: dark)").matches);
+        document.documentElement.classList.toggle("dark", dark);
+      })();
+    </script>
+
     <!-- Favicon -->
     <link rel="icon" href="%sveltekit.assets%/favicon.png" />
+
+    <!-- Preload primary font to reduce layout shift -->
+    <link
+      rel="preload"
+      href="%sveltekit.assets%/fonts/inter.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     
     <!-- Default title/description, overridden per-page via <svelte:head> where present -->
     <title>Ran Wright - AI & Data Platform Consultant</title>

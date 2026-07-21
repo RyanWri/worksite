@@ -4,9 +4,7 @@
   import "../app.css";
 </script>
 
-<div
-  class="flex flex-col min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
->
+<div class="flex flex-col min-h-screen bg-bg text-fg">
   <Header />
   <main class="flex-grow">
     <slot />

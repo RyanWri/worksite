@@ -1,8 +1,10 @@
 <script>
-  export let data;
-  export let about = data.about;
-  export let clients = data.clients;
   import Icon from "@iconify/svelte";
+  import { reveal } from "$lib/actions/reveal.js";
+
+  export let data;
+  const about = data.about;
+  const clients = data.clients;
 
   const companies = [...new Set(clients.map((c) => c.company))];
 </script>
@@ -13,70 +15,76 @@
 </svelte:head>
 
 <!-- Hero -->
-<section class="container py-12 sm:py-16 md:py-20">
-  <div class="flex flex-col-reverse md:flex-row items-center gap-8 md:gap-12">
-    <div class="text-center md:text-left flex-1">
-      <div
-        class="inline-flex items-center justify-center px-3 py-1 mb-4 text-sm font-medium rounded-full bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200"
+<section class="container py-16 sm:py-20 md:py-28">
+  <div
+    class="flex flex-col-reverse items-center gap-10 md:flex-row md:gap-16"
+    use:reveal
+  >
+    <div class="flex-1 text-center md:text-left">
+      <p
+        class="mb-5 font-mono text-xs uppercase tracking-[0.2em] text-accent"
       >
-        <Icon icon="mdi:star" class="w-4 h-4 mr-1" />
-        <span>{about.profession}</span>
-      </div>
+        &lt; {about.profession} /&gt;
+      </p>
       <h1
-        class="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4"
+        class="mb-6 text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl"
       >
         {about.name}
       </h1>
       <p
-        class="text-lg sm:text-xl text-gray-700 dark:text-gray-300 leading-relaxed max-w-2xl mx-auto md:mx-0 mb-8"
+        class="mx-auto mb-8 max-w-2xl text-lg leading-relaxed text-muted md:mx-0"
       >
         {about.description}
       </p>
       <div
-        class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-3 sm:gap-4"
+        class="flex flex-col items-center gap-3 sm:flex-row sm:gap-4 md:justify-start"
       >
         <a
           href="mailto:ranman37@gmail.com"
-          class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-md text-base font-medium text-white bg-blue-600 hover:bg-blue-700 transition-colors"
+          class="inline-flex w-full items-center justify-center rounded-md bg-accent px-6 py-3 text-base font-medium text-white transition-colors hover:bg-accent-hover sm:w-auto"
         >
           Get in Touch
-          <Icon icon="mdi:arrow-right" class="w-5 h-5 ml-2" />
+          <Icon icon="mdi:arrow-right" class="ml-2 h-5 w-5" />
         </a>
         <a
           href="https://www.linkedin.com/in/ran-wright46/"
           target="_blank"
           rel="noopener noreferrer"
-          class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-md text-base font-medium border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+          class="inline-flex w-full items-center justify-center rounded-md border border-border px-6 py-3 text-base font-medium text-fg transition-colors hover:border-accent hover:text-accent sm:w-auto"
         >
           Connect on LinkedIn
         </a>
       </div>
     </div>
-    <img
-      src="/images/me.webp"
-      alt={about.name}
-      width="256"
-      height="256"
-      class="w-40 h-40 sm:w-52 sm:h-52 md:w-64 md:h-64 rounded-full object-cover shadow-md"
-    />
+    <div class="relative shrink-0">
+      <div
+        class="absolute -inset-1 rounded-full bg-accent/20 blur-2xl"
+        aria-hidden="true"
+      ></div>
+      <img
+        src="/images/me.webp"
+        alt={about.name}
+        width="256"
+        height="256"
+        class="relative h-40 w-40 rounded-full object-cover ring-1 ring-border sm:h-52 sm:w-52 md:h-64 md:w-64"
+      />
+    </div>
   </div>
 </section>
 
 <!-- Trusted By -->
 {#if companies.length > 0}
-  <section class="bg-gray-50 dark:bg-gray-800 py-8 sm:py-10">
-    <div class="container">
+  <section class="border-y border-border bg-surface py-10">
+    <div class="container" use:reveal>
       <p
-        class="text-center text-sm font-medium uppercase tracking-wide text-gray-500 dark:text-gray-400 mb-5"
+        class="mb-6 text-center font-mono text-xs uppercase tracking-[0.2em] text-muted"
       >
         Trusted by teams at
       </p>
-      <div
-        class="flex flex-wrap justify-center gap-2 sm:gap-3 max-w-4xl mx-auto"
-      >
+      <div class="mx-auto flex max-w-4xl flex-wrap justify-center gap-2 sm:gap-3">
         {#each companies as company}
           <span
-            class="px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-sm sm:text-base text-gray-700 dark:text-gray-300"
+            class="rounded-full border border-border bg-bg px-4 py-1.5 text-sm text-muted"
           >
             {company}
           </span>
@@ -88,59 +96,79 @@
 
 <!-- Featured Work -->
 {#if about.projects?.length > 0}
-  <section class="container py-12 sm:py-16">
-    <h2
-      class="text-2xl sm:text-3xl font-bold text-center text-gray-900 dark:text-white mb-8 sm:mb-10"
+  <section class="container py-16 sm:py-24">
+    <p
+      class="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-accent"
+      use:reveal
     >
-      Featured Work
+      01 · Featured Work
+    </p>
+    <h2
+      class="mb-10 text-2xl font-bold tracking-tight sm:text-3xl"
+      use:reveal
+    >
+      Selected projects
     </h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
       {#each about.projects as project}
-        <div
-          class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-gray-700"
+        <a
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group flex flex-col rounded-lg border border-border bg-surface p-6 transition-all duration-200 hover:-translate-y-1 hover:border-accent"
+          use:reveal
         >
           <h3
-            class="text-xl font-bold text-blue-600 dark:text-blue-400 mb-3"
+            class="mb-3 text-xl font-bold tracking-tight transition-colors group-hover:text-accent"
           >
             {project.title}
           </h3>
-          <p class="text-gray-700 dark:text-gray-300 mb-4">
+          <p class="mb-6 flex-grow leading-relaxed text-muted">
             {project.description}
           </p>
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium"
-          >
-            View Case Study
-            <Icon icon="mdi:arrow-right" class="w-4 h-4 ml-1" />
-          </a>
-        </div>
+          <span class="inline-flex items-center font-medium text-accent">
+            View case study
+            <Icon
+              icon="mdi:arrow-right"
+              class="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"
+            />
+          </span>
+        </a>
       {/each}
     </div>
   </section>
 {/if}
 
-<!-- Where I Share -->
-<section class="bg-gray-50 dark:bg-gray-800 py-12 sm:py-16">
+<!-- Follow My Work -->
+<section class="border-t border-border bg-surface py-16 sm:py-24">
   <div class="container">
-    <h2
-      class="text-2xl sm:text-3xl font-bold text-center text-gray-900 dark:text-white mb-8 sm:mb-10"
+    <p
+      class="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-accent"
+      use:reveal
     >
-      Follow My Work
+      02 · Elsewhere
+    </p>
+    <h2
+      class="mb-10 text-2xl font-bold tracking-tight sm:text-3xl"
+      use:reveal
+    >
+      Follow my work
     </h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 max-w-3xl mx-auto">
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
       <a
         href="https://www.linkedin.com/in/ran-wright46/"
         target="_blank"
         rel="noopener noreferrer"
-        class="flex items-center gap-4 bg-white dark:bg-gray-900 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-gray-700"
+        class="group flex items-center gap-4 rounded-lg border border-border bg-bg p-6 transition-all duration-200 hover:-translate-y-1 hover:border-accent"
+        use:reveal
       >
-        <Icon icon="mdi:linkedin" class="w-8 h-8 text-blue-600 flex-shrink-0" />
+        <Icon
+          icon="mdi:linkedin"
+          class="h-8 w-8 shrink-0 text-muted transition-colors group-hover:text-accent"
+        />
         <div>
-          <p class="font-semibold text-gray-900 dark:text-white">LinkedIn</p>
-          <p class="text-sm text-gray-600 dark:text-gray-400">
+          <p class="font-semibold">LinkedIn</p>
+          <p class="text-sm text-muted">
             Writing on AI, data platforms, and engineering
           </p>
         </div>
@@ -149,12 +177,16 @@
         href="https://github.com/RyanWri"
         target="_blank"
         rel="noopener noreferrer"
-        class="flex items-center gap-4 bg-white dark:bg-gray-900 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-gray-700"
+        class="group flex items-center gap-4 rounded-lg border border-border bg-bg p-6 transition-all duration-200 hover:-translate-y-1 hover:border-accent"
+        use:reveal
       >
-        <Icon icon="mdi:github" class="w-8 h-8 text-gray-900 dark:text-white flex-shrink-0" />
+        <Icon
+          icon="mdi:github"
+          class="h-8 w-8 shrink-0 text-muted transition-colors group-hover:text-accent"
+        />
         <div>
-          <p class="font-semibold text-gray-900 dark:text-white">GitHub</p>
-          <p class="text-sm text-gray-600 dark:text-gray-400">
+          <p class="font-semibold">GitHub</p>
+          <p class="text-sm text-muted">
             Code, experiments, and open-source work
           </p>
         </div>
@@ -164,18 +196,21 @@
 </section>
 
 <!-- CTA -->
-<section class="container py-12 sm:py-16 text-center">
-  <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-    Have a project in mind?
-  </h2>
-  <p class="text-gray-700 dark:text-gray-300 max-w-xl mx-auto mb-6">
-    I help teams turn complex data and AI challenges into scalable, production-ready systems.
-  </p>
-  <a
-    href="mailto:ranman37@gmail.com"
-    class="inline-flex items-center px-6 py-3 rounded-md text-base font-medium text-white bg-blue-600 hover:bg-blue-700 transition-colors"
-  >
-    Let's Talk
-    <Icon icon="mdi:arrow-right" class="w-5 h-5 ml-2" />
-  </a>
+<section class="container py-20 text-center sm:py-28">
+  <div use:reveal>
+    <h2 class="mb-4 text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl">
+      Have a project in mind?
+    </h2>
+    <p class="mx-auto mb-8 max-w-xl leading-relaxed text-muted">
+      I help teams turn complex data and AI challenges into scalable,
+      production-ready systems.
+    </p>
+    <a
+      href="mailto:ranman37@gmail.com"
+      class="inline-flex items-center rounded-md bg-accent px-6 py-3 text-base font-medium text-white transition-colors hover:bg-accent-hover"
+    >
+      Let's Talk
+      <Icon icon="mdi:arrow-right" class="ml-2 h-5 w-5" />
+    </a>
+  </div>
 </section>
