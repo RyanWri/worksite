@@ -1,11 +1,6 @@
-export async function load({ fetch }) {
-  const [aboutRes, projectsRes] = await Promise.all([
-    fetch("/api/about"),
-    fetch("/api/projects"),
-  ]);
+import about from "$lib/data/about.json";
+import clients from "$lib/data/projects.json";
 
-  const about = aboutRes.ok ? await aboutRes.json() : {};
-  const clients = projectsRes.ok ? await projectsRes.json() : [];
-
+export function load() {
   return { about, clients };
 }

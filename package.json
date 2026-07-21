@@ -9,12 +9,9 @@
     "check:watch": "svelte-kit sync && svelte-check --watch"
   },
   "devDependencies": {
-    "@fontsource/fira-mono": "*",
     "@iconify/svelte": "*",
-    "@neoconfetti/svelte": "*",
     "@sveltejs/adapter-vercel": "*",
     "@sveltejs/kit": "*",
-    "@types/cookie": "*",
     "autoprefixer": "*",
     "postcss": "*",
     "postcss-load-config": "*",
@@ -23,8 +20,5 @@
     "vite": "*",
     "vite-plugin-svelte-monorepo": "github:sveltejs/vite-plugin-svelte"
   },
-  "type": "module",
-  "dependencies": {
-    "@vercel/kv": "*"
-  }
+  "type": "module"
 }

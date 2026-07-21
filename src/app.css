@@ -3,133 +3,18 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Base styles using Tailwind-provided classes */
 @layer base {
   html {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   }
-  
+
   body {
     @apply min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white;
   }
-  
-  h1 {
-    @apply text-6xl font-bold;
-  }
-  h2 {
-    @apply text-5xl font-bold;
-  }
-  h3 {
-    @apply text-4xl font-bold;
-  }
-  h4 {
-    @apply text-3xl font-bold;
-  }
-  h5 {
-    @apply text-2xl font-bold;
-  }
-  h6 {
-    @apply text-xl font-bold;
-  }
-}
-
-/* Simplified body style */
-body {
-  @apply min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white;
-}
-
-/* Reusable divider */
-.my-divider {
-  @apply border-t border-gray-600 mb-2;
-}
-
-/* Page title style */
-.page-title {
-  @apply text-2xl text-center underline italic font-bold mt-1 mb-4;
-}
-
-/* Dark mode for header, footer, and content */
-.dark-header {
-  @apply w-full shadow-md text-black dark:text-white dark:bg-gray-800;
-}
-
-.dark-footer {
-  @apply w-full shadow-md text-black dark:text-white dark:bg-gray-800;
-}
-
-.dark-main-content {
-  @apply bg-gray-100 dark:bg-gray-900 text-black dark:text-white;
-}
-
-/* Rotating logo animation */
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.rotating-logo {
-  animation: spin 10s linear infinite;
-}
-
-/* Scroll animation class */
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
- /* Adjust the scrolling speed and apply the animation */
- .animate-scroll {
-  display: flex;
-  width: calc(200%); /* Double the width for seamless looping */
-  animation: scroll 15s linear infinite;
 }
 
 @layer components {
   .container {
     @apply px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl;
-  }
-  
-  .btn {
-    @apply px-4 py-2 rounded-md font-medium transition-colors duration-200;
-  }
-  
-  .btn-primary {
-    @apply bg-blue-600 hover:bg-blue-700 text-white;
-  }
-  
-  .btn-secondary {
-    @apply bg-gray-200 hover:bg-gray-300 text-gray-900 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-white;
-  }
-  
-  .card {
-    @apply bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6;
-  }
-  
-  .heading-1 {
-    @apply text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white;
-  }
-  
-  .heading-2 {
-    @apply text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white;
-  }
-  
-  .heading-3 {
-    @apply text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white;
-  }
-  
-  .text-body {
-    @apply text-gray-700 dark:text-gray-300;
-  }
-  
-  .text-muted {
-    @apply text-gray-500 dark:text-gray-400;
   }
 }
