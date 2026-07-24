@@ -1,0 +1,6 @@
+.svelte-kit
+.vercel
+.claude
+build
+node_modules
+pnpm-lock.yaml

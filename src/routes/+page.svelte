@@ -49,9 +49,7 @@
     use:reveal
   >
     <div class="flex-1 text-center md:text-left">
-      <p
-        class="mb-5 font-mono text-xs uppercase tracking-[0.2em] text-accent"
-      >
+      <p class="mb-5 font-mono text-xs uppercase tracking-[0.2em] text-accent">
         &lt; {about.profession} /&gt;
       </p>
       <h1
@@ -142,10 +140,7 @@
     >
       01 · Featured Work
     </p>
-    <h2
-      class="mb-10 text-2xl font-bold tracking-tight sm:text-3xl"
-      use:reveal
-    >
+    <h2 class="mb-10 text-2xl font-bold tracking-tight sm:text-3xl" use:reveal>
       Selected projects
     </h2>
     <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -187,10 +182,7 @@
     >
       02 · Elsewhere
     </p>
-    <h2
-      class="mb-10 text-2xl font-bold tracking-tight sm:text-3xl"
-      use:reveal
-    >
+    <h2 class="mb-10 text-2xl font-bold tracking-tight sm:text-3xl" use:reveal>
       Follow my work
     </h2>
     <div class="grid grid-cols-1 gap-6 sm:grid-cols-3">

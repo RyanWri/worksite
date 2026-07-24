@@ -10,17 +10,27 @@
     "build": "vite build",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check",
-    "check:watch": "svelte-kit sync && svelte-check --watch"
+    "check:watch": "svelte-kit sync && svelte-check --watch",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.5",
     "@iconify/svelte": "^4.0.2",
     "@sveltejs/adapter-vercel": "^6.3.4",
     "@sveltejs/kit": "^2.70.1",
     "@sveltejs/vite-plugin-svelte": "^3.1.2",
     "autoprefixer": "^10.4.20",
+    "eslint": "^9.39.5",
+    "eslint-plugin-svelte": "^2.46.1",
+    "globals": "^17.7.0",
     "postcss": "^8.5.20",
     "postcss-load-config": "^6.0.1",
+    "prettier": "^3.9.6",
+    "prettier-plugin-svelte": "^3.5.2",
     "svelte": "^4.2.20",
+    "svelte-eslint-parser": "^1.8.0",
     "tailwindcss": "^3.4.12",
     "vite": "^5.4.21"
   },
