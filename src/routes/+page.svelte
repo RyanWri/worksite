@@ -1,6 +1,4 @@
 <script>
-  import { onMount } from "svelte";
-  import { fly } from "svelte/transition";
   import Icon from "@iconify/svelte";
   import { reveal } from "$lib/actions/reveal.js";
 
@@ -9,32 +7,8 @@
   const clients = data.clients;
 
   const companies = [...new Set(clients.map((c) => c.company))];
-
-  const SLIDE_SIZE = 3;
-  const SLIDE_INTERVAL_MS = 3000;
-  let slideStart = 0;
-  let paused = false;
-
-  $: visibleCompanies =
-    companies.length <= SLIDE_SIZE
-      ? companies
-      : Array.from(
-          { length: SLIDE_SIZE },
-          (_, i) => companies[(slideStart + i) % companies.length],
-        );
-
-  onMount(() => {
-    if (companies.length <= SLIDE_SIZE) return;
-    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-    const timer = setInterval(() => {
-      if (!paused) {
-        slideStart = (slideStart + SLIDE_SIZE) % companies.length;
-      }
-    }, SLIDE_INTERVAL_MS);
-
-    return () => clearInterval(timer);
-  });
+  // Doubled so the marquee can loop seamlessly at a 50% translateX.
+  const marqueeCompanies = [...companies, ...companies];
 </script>
 
 <svelte:head>
@@ -109,23 +83,20 @@
       </p>
       <span class="sr-only">Trusted by: {companies.join(", ")}</span>
       <div
-        class="mx-auto flex max-w-4xl min-h-[2.75rem] flex-wrap justify-center gap-2 sm:gap-3"
-        role="group"
-        aria-label="Trusted by companies (rotating selection)"
+        class="group relative mx-auto max-w-4xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]"
         aria-hidden="true"
-        on:mouseenter={() => (paused = true)}
-        on:mouseleave={() => (paused = false)}
       >
-        {#key slideStart}
-          {#each visibleCompanies as company (company)}
+        <div
+          class="animate-marquee flex w-max gap-2 group-hover:[animation-play-state:paused] motion-reduce:animate-none sm:gap-3"
+        >
+          {#each marqueeCompanies as company, i (i)}
             <span
-              in:fly={{ x: 24, duration: 400 }}
-              class="rounded-full border border-border bg-bg px-4 py-1.5 text-sm text-muted"
+              class="shrink-0 rounded-full border border-border bg-bg px-4 py-1.5 text-sm text-muted"
             >
               {company}
             </span>
           {/each}
-        {/key}
+        </div>
       </div>
     </div>
   </section>
