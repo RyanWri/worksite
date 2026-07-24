@@ -35,21 +35,22 @@ The site is currently being reduced to a single homepage (see issue #31). It has
 
 ```bash
 # Development
-npm run dev              # Start dev server (runs on http://localhost:5173)
-npm run dev -- --open   # Start dev server and open in browser
+pnpm dev              # Start dev server (runs on http://localhost:5173)
+pnpm dev -- --open   # Start dev server and open in browser
 
 # Building
-npm run build           # Build for production
-npm run preview         # Preview production build locally
+pnpm build           # Build for production
+pnpm preview         # Preview production build locally
 
 # Code Quality
-npm run check          # Type-check with Svelte and TypeScript
-npm run check:watch    # Type-check in watch mode (auto-rerun on changes)
+pnpm check          # Type-check with Svelte and TypeScript
+pnpm check:watch    # Type-check in watch mode (auto-rerun on changes)
 ```
 
 ## Key Development Concepts
 
 ### Routing (SvelteKit Conventions)
+
 - Files in `src/routes/` define URL paths
 - `+page.svelte` = page component
 - `+page.server.js` = server-side data loading (runs server-side only)
@@ -58,13 +59,16 @@ npm run check:watch    # Type-check in watch mode (auto-rerun on changes)
 - `+error.svelte` = error page
 
 ### Styling
+
 - Tailwind CSS utility classes for styling
 - Dark mode via `darkMode: "selector"` (add `class="dark"` to element to enable)
 - Custom Tailwind config in `tailwind.config.cjs` with custom animations (wiggle)
 - PostCSS processes Tailwind before output
 
 ### Components
+
 Shared Svelte components live in `src/lib/components/`. Components receive props for configuration and render reactively. Notable components:
+
 - `Header.svelte` - Navigation and branding
 - `Footer.svelte` - Footer links and info
 - `SkillsIconGrid.svelte` - Skills visualization
@@ -73,16 +77,19 @@ Shared Svelte components live in `src/lib/components/`. Components receive props
 ## Important Patterns
 
 **Adding a New Page**:
+
 1. Create `src/routes/page-name/+page.svelte`
 2. If the page needs data, add `src/routes/page-name/+page.server.js` with a `load()` function
 3. If you need server-side data loading from an API, call `fetch('/api/endpoint')` in the `load()` function
 
 **Adding a New API Endpoint**:
+
 1. Create `src/routes/api/endpoint-name/+server.js`
 2. Export `GET` (or `POST`, etc.) function that returns `json(data)`
 3. Import data from `src/lib/data/*.json`
 
 **Adding a New Data File**:
+
 1. Create JSON file in `src/lib/data/`
 2. Create API endpoint in `src/routes/api/` to serve it
 3. Use `fetch('/api/...')` in page `load()` functions to retrieve
@@ -90,6 +97,7 @@ Shared Svelte components live in `src/lib/components/`. Components receive props
 ## Deployment
 
 Deployed on **Vercel** with these considerations:
+
 - Production build outputs to `.vercel` directory
 - `svelte.config.js` uses `@sveltejs/adapter-vercel` with Node.js 24.x runtime
 - Environment variables go in `.env.local` (git-ignored)
@@ -97,19 +105,20 @@ Deployed on **Vercel** with these considerations:
 
 ## Type Checking
 
-Use `npm run check` before committing. This runs:
+Use `pnpm check` before committing. This runs:
+
 - `svelte-kit sync` - Generates types for routes
 - `svelte-check` - Type checks all Svelte components and TypeScript files
 
-Watch mode with `npm run check:watch` is useful during development.
+Watch mode with `pnpm check:watch` is useful during development.
 
 ## Rules for Claude
 
 This is a solo portfolio site meant to load fast and stay easy to maintain. Three principles:
 
-1. **Minimize footprint** — no new npm dependency without asking first; every package is bytes shipped to visitors. Prefer existing Tailwind utilities over new custom CSS in `app.css`.
+1. **Minimize footprint** — no new dependency without asking first; every package is bytes shipped to visitors. Prefer existing Tailwind utilities over new custom CSS in `app.css`.
 2. **Readability** — clear naming and structure over clever abstractions. This codebase is small; keep it easy to scan.
-3. **Clean and minimal, don't break things** — delete dead code rather than commenting it out. Verify `npm run build` still succeeds after structural changes.
+3. **Clean and minimal, don't break things** — delete dead code rather than commenting it out. Verify `pnpm build` still succeeds after structural changes.
 
 ## Brand
 

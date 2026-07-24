@@ -1,38 +1,37 @@
-# create-svelte
+# worksite
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
-
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+Ran Wright's personal portfolio site — a SvelteKit single-page site deployed on Vercel.
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Install dependencies, then start the dev server:
 
 ```bash
-npm run dev
+pnpm install
+pnpm dev
 
 # or start the server and open the app in a new browser tab
-npm run dev -- --open
+pnpm dev -- --open
 ```
 
 ## Building
 
-To create a production version of your app:
-
 ```bash
-npm run build
+pnpm build
+pnpm preview   # preview the production build locally
 ```
 
-You can preview the production build with `npm run preview`.
+## Type checking
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+```bash
+pnpm check
+pnpm check:watch   # watch mode
+```
+
+## Deployment
+
+The site deploys to [Vercel](https://vercel.com) via `@sveltejs/adapter-vercel` (configured in `svelte.config.js`, targeting the Node.js 24.x runtime). To connect this repository to Vercel for the first time:
+
+1. In the Vercel dashboard, import this GitHub repository as a new project (or run `vercel link` from the repo root).
+2. Vercel auto-detects the SvelteKit framework and build settings — no extra configuration is required.
+3. Every push to `master` deploys to production; other branches get preview deployments.

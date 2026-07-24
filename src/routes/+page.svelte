@@ -7,6 +7,8 @@
   const clients = data.clients;
 
   const companies = [...new Set(clients.map((c) => c.company))];
+  // Doubled so the marquee can loop seamlessly at a 50% translateX.
+  const marqueeCompanies = [...companies, ...companies];
 </script>
 
 <svelte:head>
@@ -21,9 +23,7 @@
     use:reveal
   >
     <div class="flex-1 text-center md:text-left">
-      <p
-        class="mb-5 font-mono text-xs uppercase tracking-[0.2em] text-accent"
-      >
+      <p class="mb-5 font-mono text-xs uppercase tracking-[0.2em] text-accent">
         &lt; {about.profession} /&gt;
       </p>
       <h1
@@ -81,14 +81,22 @@
       >
         Trusted by teams at
       </p>
-      <div class="mx-auto flex max-w-4xl flex-wrap justify-center gap-2 sm:gap-3">
-        {#each companies as company}
-          <span
-            class="rounded-full border border-border bg-bg px-4 py-1.5 text-sm text-muted"
-          >
-            {company}
-          </span>
-        {/each}
+      <span class="sr-only">Trusted by: {companies.join(", ")}</span>
+      <div
+        class="group relative mx-auto max-w-4xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]"
+        aria-hidden="true"
+      >
+        <div
+          class="animate-marquee flex w-max gap-2 group-hover:[animation-play-state:paused] motion-reduce:animate-none sm:gap-3"
+        >
+          {#each marqueeCompanies as company, i (i)}
+            <span
+              class="shrink-0 rounded-full border border-border bg-bg px-4 py-1.5 text-sm text-muted"
+            >
+              {company}
+            </span>
+          {/each}
+        </div>
       </div>
     </div>
   </section>
@@ -103,10 +111,7 @@
     >
       01 · Featured Work
     </p>
-    <h2
-      class="mb-10 text-2xl font-bold tracking-tight sm:text-3xl"
-      use:reveal
-    >
+    <h2 class="mb-10 text-2xl font-bold tracking-tight sm:text-3xl" use:reveal>
       Selected projects
     </h2>
     <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -148,13 +153,10 @@
     >
       02 · Elsewhere
     </p>
-    <h2
-      class="mb-10 text-2xl font-bold tracking-tight sm:text-3xl"
-      use:reveal
-    >
+    <h2 class="mb-10 text-2xl font-bold tracking-tight sm:text-3xl" use:reveal>
       Follow my work
     </h2>
-    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-3">
       <a
         href="https://www.linkedin.com/in/ran-wright46/"
         target="_blank"
@@ -189,6 +191,22 @@
           <p class="text-sm text-muted">
             Code, experiments, and open-source work
           </p>
+        </div>
+      </a>
+      <a
+        href="https://medium.com/@rrwdev"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group flex items-center gap-4 rounded-lg border border-border bg-bg p-6 transition-all duration-200 hover:-translate-y-1 hover:border-accent"
+        use:reveal
+      >
+        <Icon
+          icon="mdi:medium"
+          class="h-8 w-8 shrink-0 text-muted transition-colors group-hover:text-accent"
+        />
+        <div>
+          <p class="font-semibold">Medium</p>
+          <p class="text-sm text-muted">Articles on AI and data platforms</p>
         </div>
       </a>
     </div>
