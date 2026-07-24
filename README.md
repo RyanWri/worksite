@@ -7,25 +7,25 @@ Ran Wright's personal portfolio site — a SvelteKit single-page site deployed o
 Install dependencies, then start the dev server:
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 
 # or start the server and open the app in a new browser tab
-npm run dev -- --open
+pnpm dev -- --open
 ```
 
 ## Building
 
 ```bash
-npm run build
-npm run preview   # preview the production build locally
+pnpm build
+pnpm preview   # preview the production build locally
 ```
 
 ## Type checking
 
 ```bash
-npm run check
-npm run check:watch   # watch mode
+pnpm check
+pnpm check:watch   # watch mode
 ```
 
 ## Deployment

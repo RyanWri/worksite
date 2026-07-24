@@ -35,16 +35,16 @@ The site is currently being reduced to a single homepage (see issue #31). It has
 
 ```bash
 # Development
-npm run dev              # Start dev server (runs on http://localhost:5173)
-npm run dev -- --open   # Start dev server and open in browser
+pnpm dev              # Start dev server (runs on http://localhost:5173)
+pnpm dev -- --open   # Start dev server and open in browser
 
 # Building
-npm run build           # Build for production
-npm run preview         # Preview production build locally
+pnpm build           # Build for production
+pnpm preview         # Preview production build locally
 
 # Code Quality
-npm run check          # Type-check with Svelte and TypeScript
-npm run check:watch    # Type-check in watch mode (auto-rerun on changes)
+pnpm check          # Type-check with Svelte and TypeScript
+pnpm check:watch    # Type-check in watch mode (auto-rerun on changes)
 ```
 
 ## Key Development Concepts
@@ -97,19 +97,19 @@ Deployed on **Vercel** with these considerations:
 
 ## Type Checking
 
-Use `npm run check` before committing. This runs:
+Use `pnpm check` before committing. This runs:
 - `svelte-kit sync` - Generates types for routes
 - `svelte-check` - Type checks all Svelte components and TypeScript files
 
-Watch mode with `npm run check:watch` is useful during development.
+Watch mode with `pnpm check:watch` is useful during development.
 
 ## Rules for Claude
 
 This is a solo portfolio site meant to load fast and stay easy to maintain. Three principles:
 
-1. **Minimize footprint** — no new npm dependency without asking first; every package is bytes shipped to visitors. Prefer existing Tailwind utilities over new custom CSS in `app.css`.
+1. **Minimize footprint** — no new dependency without asking first; every package is bytes shipped to visitors. Prefer existing Tailwind utilities over new custom CSS in `app.css`.
 2. **Readability** — clear naming and structure over clever abstractions. This codebase is small; keep it easy to scan.
-3. **Clean and minimal, don't break things** — delete dead code rather than commenting it out. Verify `npm run build` still succeeds after structural changes.
+3. **Clean and minimal, don't break things** — delete dead code rather than commenting it out. Verify `pnpm build` still succeeds after structural changes.
 
 ## Brand
 
