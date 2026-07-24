@@ -193,7 +193,7 @@
     >
       Follow my work
     </h2>
-    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-3">
       <a
         href="https://www.linkedin.com/in/ran-wright46/"
         target="_blank"
@@ -228,6 +228,22 @@
           <p class="text-sm text-muted">
             Code, experiments, and open-source work
           </p>
+        </div>
+      </a>
+      <a
+        href="https://medium.com/@rrwdev"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group flex items-center gap-4 rounded-lg border border-border bg-bg p-6 transition-all duration-200 hover:-translate-y-1 hover:border-accent"
+        use:reveal
+      >
+        <Icon
+          icon="mdi:medium"
+          class="h-8 w-8 shrink-0 text-muted transition-colors group-hover:text-accent"
+        />
+        <div>
+          <p class="font-semibold">Medium</p>
+          <p class="text-sm text-muted">Articles on AI and data platforms</p>
         </div>
       </a>
     </div>
