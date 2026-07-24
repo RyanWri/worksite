@@ -49,7 +49,8 @@
   },
   "enabledPlugins": {
     "svelte-skills@svelte-skills-kit": true,
-    "frontend-design@claude-plugins-official": true
+    "frontend-design@claude-plugins-official": true,
+    "vercel@claude-plugins-official": true
   },
   "spinnerTipsEnabled": true,
   "syntaxHighlightingDisabled": false,
