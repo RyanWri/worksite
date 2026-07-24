@@ -1,4 +1,6 @@
 <script>
+  import { onMount } from "svelte";
+  import { fly } from "svelte/transition";
   import Icon from "@iconify/svelte";
   import { reveal } from "$lib/actions/reveal.js";
 
@@ -7,6 +9,32 @@
   const clients = data.clients;
 
   const companies = [...new Set(clients.map((c) => c.company))];
+
+  const SLIDE_SIZE = 3;
+  const SLIDE_INTERVAL_MS = 3000;
+  let slideStart = 0;
+  let paused = false;
+
+  $: visibleCompanies =
+    companies.length <= SLIDE_SIZE
+      ? companies
+      : Array.from(
+          { length: SLIDE_SIZE },
+          (_, i) => companies[(slideStart + i) % companies.length],
+        );
+
+  onMount(() => {
+    if (companies.length <= SLIDE_SIZE) return;
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const timer = setInterval(() => {
+      if (!paused) {
+        slideStart = (slideStart + SLIDE_SIZE) % companies.length;
+      }
+    }, SLIDE_INTERVAL_MS);
+
+    return () => clearInterval(timer);
+  });
 </script>
 
 <svelte:head>
@@ -81,14 +109,25 @@
       >
         Trusted by teams at
       </p>
-      <div class="mx-auto flex max-w-4xl flex-wrap justify-center gap-2 sm:gap-3">
-        {#each companies as company}
-          <span
-            class="rounded-full border border-border bg-bg px-4 py-1.5 text-sm text-muted"
-          >
-            {company}
-          </span>
-        {/each}
+      <span class="sr-only">Trusted by: {companies.join(", ")}</span>
+      <div
+        class="mx-auto flex max-w-4xl min-h-[2.75rem] flex-wrap justify-center gap-2 sm:gap-3"
+        role="group"
+        aria-label="Trusted by companies (rotating selection)"
+        aria-hidden="true"
+        on:mouseenter={() => (paused = true)}
+        on:mouseleave={() => (paused = false)}
+      >
+        {#key slideStart}
+          {#each visibleCompanies as company (company)}
+            <span
+              in:fly={{ x: 24, duration: 400 }}
+              class="rounded-full border border-border bg-bg px-4 py-1.5 text-sm text-muted"
+            >
+              {company}
+            </span>
+          {/each}
+        {/key}
       </div>
     </div>
   </section>
